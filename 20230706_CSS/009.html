@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상요소</title>
+    <style>
+        p::before {
+            content: '7기 여러분 ';
+        }
+
+
+        p::after {
+            content: '😊';
+        }
+
+        img::before {
+            content: '😊';
+        }
+
+        img::after {
+            content: '😊';
+        }
+
+        input::before {
+            content: '😊';
+        }
+
+        input::after {
+            content: '😊';
+        }
+    </style>
+</head>
+
+<body>
+    <p><strong>안녕하세요</strong>
+        <strong>안녕하세요</strong><br>
+        <strong>안녕하세요</strong>
+        <strong>안녕하세요</strong>
+        <strong>안녕하세요</strong>
+    </p>
+
+    <img src="./facebook.png" alt="facebook image">
+    <br>
+    <img src="./twitter.png" alt="instagram image">
+    <br>
+    <input type="text">
+</body>
+
+</html>

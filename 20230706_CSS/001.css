@@ -1,0 +1,59 @@
+/* import로 연결하는 방법 */
+@import url('https://fonts.googleapis.com/css2?family=Diphylleia&display=swap');
+
+/* font-face 눈누 폰트 삽입 */
+@font-face {
+    font-family: 'PyeongChangPeace-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+.font-pc {
+    font-family: 'PyeongChangPeace-Bold';
+}
+
+/* font-face 상대경로 폰트 연결 */
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('./font/Pretendard-Regular.woff') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    color: red;
+    font-family: 'Pretendard-Regular','Times New Roman', Times, serif, '돋음';
+    /* border: 2px solid #ddd; */
+}
+
+h1,h2 {
+    font-weight: normal;
+}
+
+h1 {
+    color: inherit;
+    font-family: 'Gasoek One', sans-serif;
+    /* border: 2px solid #ddd; */
+    /* color: rgba(20, 39, 96, 0.726); */
+}
+
+strong {
+    /* color: inherit;
+    border: inherit; */
+    /* border-bottom: 5px solid currentColor; */
+    border-bottom: 5px solid currentColor;
+}
+
+button {
+    color: inherit;
+}
+
+h2 {
+    color: #999;
+    /* font-family: 'Pretendard-Regular', Verdana,sans-serif; */
+
+    font-family: 'Diphylleia', serif;
+    /* font-family: 'Bagel Fat One', cursive; */
+    /* font-family: 'Gasoek One', sans-serif; */
+    /* font-family: 'Noto Serif KR', serif; */
+}

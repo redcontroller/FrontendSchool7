@@ -1,0 +1,33 @@
+/* 아아디 선택자 */
+#title {
+    text-decoration: underline;
+}
+
+/* 클래스 선택자 */
+.my-h2 {
+    color: slateblue;
+}
+
+/* 형제 입접 선택자 */
+.my-h2 + p {
+    color: red;
+}
+
+/* 자손 선택자
+.sect2  strong{
+    background-color: yellow;
+} */
+
+/* 자손 선택자 */
+.sect2 > strong{
+    background-color: yellow;
+}
+
+.sect2 > * {
+    border: 2px solid coral;
+}
+
+.my-h2 + p,
+.sect3 p {
+    background-color: beige;
+}
