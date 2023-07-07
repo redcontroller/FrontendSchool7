@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border-radius 실습</title>
+    <style>
+        div div {
+            float: left;
+            background-color: skyblue;
+            width: 150px;
+            height: 150px;
+            margin: 15px;
+        }
+
+        .div1 {
+            /* border-radius: 150px; */
+            border-radius: 50%;
+        }
+
+        .width2 {
+            width: 200px;
+            border-radius: 50%;
+        }
+
+        .div2 {
+            border-radius: 15px;
+        }
+
+        .div3 {
+            /* border-radius: 100px 0px 0px 0px; */
+            border-radius: 100% 0 0 0;
+        }
+
+        .div4 {
+            /* border-radius: 100px 0px 100px 0px; */
+            border-radius: 100% 0;
+            /* border-radius: 0 100%; */
+        }
+
+        .div5 {
+            /* border-radius: 0px 80px 0px 80px; */
+            border-radius: 0 50%;
+        }
+
+        .div6 {
+            height: 75px;
+            border-radius: 100px 100px 0px 0px;
+            /* border-radius: 50% 0; */
+        }
+
+        .div7 {
+            width: 75px;
+            border-radius: 0px 100px 100px 0px;
+        }
+
+        .div8 {
+            height: 75px;
+            border-radius: 0px 0px 100px 100px;
+        }
+
+        .div9 {
+            width: 75px;
+            border-radius: 100px 0px 0px 100px;
+        }
+
+        .heart {
+            transform: rotation(45deg);
+            position: relative;
+        }
+
+        .heart::before {
+            content: "";
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            border: 5px solid blue;
+        }
+
+        .heart::after {
+            content: "";
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            border: 5px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="div1"></div>
+        <div class="div1 width2"></div>
+        <div class="div2"></div>
+        <div class="div3"></div>
+        <div class="div4"></div>
+        <div class="div5"></div>
+        <div class="div6"></div>
+        <div class="div7"></div>
+        <div class="div8"></div>
+        <div class="div9"></div>
+    </div>
+</body>
+
+</html>
