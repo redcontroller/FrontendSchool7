@@ -1,0 +1,124 @@
+@import url('https://fonts.cdnfonts.com/css/montserrat');
+
+h1 {
+    font-family: montserrat;
+    text-align: center;
+}
+
+body {
+    min-width: fit-content;
+    padding: 0;
+    margin: 0;
+}
+
+.main-box {
+    width: 650px;
+    padding: 30px;
+    margin: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 1px 20px 0 rgb(0,0,0,0.1);
+}
+
+img {
+    width: 60%;
+    height: 60%;
+    /* border-bottom: 3px dashed gray; */
+    box-shadow: 0 1px 10px 0 rgba(0,0,0,0.1);
+    background-clip: padding-box;
+    padding-right: 10vh;
+    padding-left: 10vh;
+    margin: auto;
+    display: block;
+}
+
+.wrap {
+    width: fit-content;
+    height: fit-content;
+    overflow: hidden;
+    margin: auto;
+    margin-left: 7vw;
+    margin-top: 5vh;
+}
+
+ul {
+    font-size: 15px;
+    float: left;
+}
+
+.box {
+    width: 200px;
+    height: 100px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: -1px;
+    margin: 15px;
+    display: table;
+    text-align: center;
+    background-color: #343f50;
+}
+
+.text {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 180%;
+}
+
+.b1 {
+    width: 180px;
+    height: 80px;
+    border: 5px solid #000;
+    background-clip: content-box;
+    float: left;
+}
+
+.in-box1 {
+    width: inherit;
+    height: inherit;
+    border-left: 5px solid #4A5568;
+    background-image: linear-gradient(180deg, #4a5568 6%, #343F50 6%);
+    display: table;
+    text-align: center;
+}
+
+.b2 {
+    width: 120px;
+    height: 60px;
+    border: 10px solid #000;
+    background-clip: content-box;
+    float: left;
+}
+
+.in-box2 {
+    width: inherit;
+    height: inherit;
+    border-left: 10px solid #4A5568;
+    background-image: linear-gradient(180deg, #4a5568 15%, #343F50 15%);
+}
+
+.b3 {
+    width: 180px;
+    height: 80px;
+    border: 5px dashed #e6d6ff;
+    background-image: linear-gradient(90deg,
+            #8c4bf5 0%,
+            #326ef2 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    border-radius: 100px 100px 100px 100px;
+    float: left;
+}
+
+.b4 {
+    width: 200px;
+    height: 80px;
+    color:#29363d;
+    text-shadow: 1px 1px 0px #82898e ;
+    border: 5px solid #eeeeee;
+    background-color: #ffffff;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    border-radius: 0px 100px 100px 100px;
+    box-shadow: 12px 10px 10px 0px #e5e5e5;
+    float: left;
+}
