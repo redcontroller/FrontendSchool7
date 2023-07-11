@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <style>
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        * {
+            font-family: 'Pretendard-Regular';
+        }
+
+        h2,
+        div {
+            margin: 0;
+        }
+
+        img.icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        img.logo {
+            width: 100px;
+            /* aspect-ratio: 1/2; */
+        }
+
+        .mainbox {
+            width: 50vw;
+            height: 30vh;
+            /* background-color: skyblue; */
+            margin: auto;
+            border: 2px solid #d7d7d7;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            justify-content: space-evenly;
+        }
+
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .login {
+            width: 90%;
+            text-align: center;
+            background-color: #711bff;
+            border-radius: 5px;
+        }
+
+        .login span {
+            color: white;
+        }
+
+        .bottom {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainbox">
+        <h2>더 편해진 위니브에 오신 것을 환영합니다.</h2>
+        <div class="container">
+            <a class="login">
+                <img class="logo" src="./images/weniv-logo.png" alt="위니브 로고" sizes="30px 30px">
+                <span>로그인</span>
+            </a>
+            <div class="bottom">
+                <img class="icon" src="./images/icon-lock.png" alt="자물쇠">
+                <a href="">아이디</a>
+                <a href="">비밀번호</a>
+                <img class="icon" src="./images/icon-user.png" alt="사람">
+                <a href="#">회원가입</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

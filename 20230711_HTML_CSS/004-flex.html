@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float</title>
+    <style>
+        header {
+            background-color: skyblue;
+            height: 100px;
+        }
+
+        section {
+            background-color: salmon;
+            height: 300px;
+        }
+
+        aside {
+            background-color: gold;
+            height: 300px;
+        }
+
+        footer {
+            background-color: slateblue;
+            height: 100px;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        section,
+        aside {
+            flex-basis: 0;
+        }
+
+        /* 고정값/내용이 없을 때 */
+        /* section {
+            flex-grow: 3;
+        }
+
+        aside {
+            flex-grow: 1;
+        } */
+
+        /* 고정값이 있을 때 */
+        section {
+            flex-basis: 300px;
+            flex-grow: 3;
+        }
+
+        aside {
+            flex-basis: 300px;
+            flex-shrink: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>header</header>
+    <div class="container">
+        <section>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium voluptatum quo corporis
+            distinctio minima earum id accusantium, voluptatem non iste aut eius quod ex sed aspernatur iusto dolore
+            adipisci officia.</section>
+        <aside>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia architecto aliquid at numquam ipsa
+            similique corrupti consectetur nulla voluptas voluptate accusamus libero natus, consequatur, ex molestias
+            pariatur inventore autem quos.</aside>
+    </div>
+    <footer>footer</footer>
+</body>
+
+</html>
