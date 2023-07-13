@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼 만들기</title>
+    <style>
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        button {
+            width: 88px;
+            height: 32px;
+            font-family: 'Pretendard-Regular';
+            font-weight: 700;
+            font-size: 12px;
+            color: #CBD5DF;
+            background-color: #343f50;
+            /* background-color: inset 5px 5px 0 0 #4a5568; */
+            /* border: 2px solid black; */
+            /* box-sizing: border-box; */
+        }
+
+        :root {
+            --default-color: #CBD5DF;
+            --disabled-color: #4A5568;
+            --active-color: white;
+        }
+
+        .btn1 {
+            color: var(--default-color);
+        }
+
+        .btn2:hover {
+            color: var(--active-color);
+            text-decoration: underline;
+        }
+
+        .btn3:active {
+            color: var(--active-color);
+            text-decoration: underline;
+        }
+
+        .btn4 {
+            color: var(--disabled-color);
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn1" type="button">Button</button>
+    <button class="btn2" type="button">Button</button>
+    <button class="btn3" type="button">Button</button>
+    <button class="btn4 disabled" type="button" disabled>Button</button>
+</body>
+
+</html>
