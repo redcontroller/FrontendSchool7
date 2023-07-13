@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>버튼 만들기</title>
+    <style>
+        @font-face {
+            font-family: 'Pretendard-Regular';
+            src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        :root {
+            /* text */
+            --default-color: #CBD5DF;
+            --hover-color: white;
+            --disabled-color: #4a5568;
+            --default-color-positive: #439AFF;
+            --default-color-negative: #EB5757;
+            /* background */
+            --bg-color: #343F50;
+            --bg-color-hover-positive: #439AFF;
+            --bg-color-hover-negative: #EB5757;
+            /* border */
+            --default-border-color: #1A202C;
+            --hover-border-color-positive: #439AFF;
+            --hover-border-color-negative: #EB5757;
+            /* box-shadow */
+            --default-shadow-color: #4a5568;
+            --active-shadow-color: #262f3e;
+            --hover-shadow-color-positive: rgba(255, 255, 255, 0.20);
+            --active-shadow-color-positive: rgba(0, 0, 0, 0.20);
+        }
+
+        button {
+            width: 88px;
+            height: 32px;
+            font-family: 'Pretendard-Regular';
+            font-weight: 700;
+            font-size: 12px;
+            color: var(--hover-color);
+            background-color: var(--bg-color);
+            border: 2px solid var(--default-border-color);
+        }
+
+        .btn1:enabled {
+            color: var(--default-color);
+            box-shadow: inset 2px 2px 0 0 #4a5568;
+        }
+
+        .btn1:enabled:hover {
+            text-decoration: underline;
+            box-shadow: inset 2px 2px 0 0 #4a5568;
+        }
+
+        .btn1:enabled:active {
+            text-decoration: underline;
+            box-shadow: inset 2px 2px 0 0 rgba(0, 0, 0, 0.20);
+        }
+
+        .btn2:disabled {
+            color: var(--disabled-color);
+        }
+
+        .btn3:enabled {
+            color: var(--default-color-positive);
+        }
+
+        .btn3:enabled:hover {
+            color: var(--hover-color);
+            background-color: var(--bg-color-hover-positive);
+            text-decoration: underline;
+            border: 2px solid var(--hover-border-color-positive);
+            box-shadow: 2px 2px 0px 0px var(--hover-shadow-color-positive) inset;
+        }
+
+        .btn3:enabled:active {
+            color: var(--hover-color);
+            background-color: var(--bg-color-hover-positive);
+            text-decoration: underline;
+            border: 2px solid var(--hover-border-color-positive);
+            box-shadow: 2px 2px 0px 0px var(--active-shadow-color-positive) inset;
+        }
+
+        .btn4:enabled {
+            color: var(--default-color-negative);
+        }
+
+        .btn4:enabled:hover {
+            color: var(--hover-color);
+            background-color: var(--bg-color-hover-negative);
+            text-decoration: underline;
+            border: 2px solid var(--hover-border-color-negative);
+            box-shadow: 2px 2px 0px 0px var(--hover-shadow-color-positive) inset;
+        }
+
+        .btn4:enabled:active {
+            color: var(--hover-color);
+            background-color: var(--bg-color-hover-negative);
+            text-decoration: underline;
+            border: 2px solid var(--hover-border-color-negative);
+            box-shadow: 2px 2px 0px 0px var(--active-shadow-color-positive) inset;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn1" type="button">Button</button>
+    <button class="btn2" type="button" disabled>Button</button>
+    <button class="btn3" type="button">Yes</button>
+    <button class="btn4" type="button">Del</button>
+</body>
+
+</html>
