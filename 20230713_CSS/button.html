@@ -14,6 +14,17 @@
             font-style: normal;
         }
 
+        :root {
+            /* text */
+            --default-color: #CBD5DF;
+            --disabled-color: #4A5568;
+            --active-color: white;
+            /* background */
+            --default-shadow-color: #4a5568;
+            --active-shadow-color: #262f3e;
+            --disabled-shadow-color: #4a5568;
+        }
+
         button {
             width: 88px;
             height: 32px;
@@ -21,33 +32,28 @@
             font-weight: 700;
             font-size: 12px;
             color: #CBD5DF;
-            background-color: #343f50;
-            /* background-color: inset 5px 5px 0 0 #4a5568; */
-            /* border: 2px solid black; */
-            /* box-sizing: border-box; */
+            background-color: var(--bg-color);
+            border: 2px solid black;
         }
 
-        :root {
-            --default-color: #CBD5DF;
-            --disabled-color: #4A5568;
-            --active-color: white;
-        }
-
-        .btn1 {
+        .btn1:enabled {
             color: var(--default-color);
+            background-color: inset 5px 5px 0 0 #4a5568;
         }
 
-        .btn2:hover {
+        .btn1:enabled:hover {
+            color: var(--active-color);
+            text-decoration: underline;
+            background-color: inset 5px 5px 0 0 #4a5568;
+        }
+
+        .btn1:enabled:active {
             color: var(--active-color);
             text-decoration: underline;
         }
 
-        .btn3:active {
-            color: var(--active-color);
-            text-decoration: underline;
-        }
-
-        .btn4 {
+        .btn4:disabled {
+            background-color: #3a4556;
             color: var(--disabled-color);
         }
     </style>
@@ -55,9 +61,9 @@
 
 <body>
     <button class="btn1" type="button">Button</button>
-    <button class="btn2" type="button">Button</button>
-    <button class="btn3" type="button">Button</button>
-    <button class="btn4 disabled" type="button" disabled>Button</button>
+    <button class="btn2" type="button">Yes</button>
+    <button class="btn3" type="button">No</button>
+    <button class="btn4" type="button" disabled>Button</button>
 </body>
 
 </html>
