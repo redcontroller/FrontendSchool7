@@ -1,0 +1,45 @@
+
+body, h2, div, p {
+    margin: unset;
+}
+
+h2, p {
+    font-family: Arial;
+}
+
+body {
+    background-image: url(./images/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.wrap {
+    width: 300px;
+    margin: 50px auto;
+    /* background-color: aquamarine; */
+}
+
+.main {
+    background-color: #9C6035;
+    border-radius: 0px 0px 30px 30px;
+    border-bottom: 10px solid #46260E;
+}
+
+.desc {
+    padding: 10px 20px;
+    /* background-color: blue; */
+}
+
+.desc > h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: white;
+}
+
+.desc > p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #E8BC9C;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
