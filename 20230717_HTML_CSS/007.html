@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습</title>
+    <style>
+        .container {
+            display: grid;
+            width: 500px;
+            height: 500px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr 2fr 3fr 1fr;
+            background-color: skyblue;
+        }
+
+        .container div {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .container div:nth-child(1) {
+            background-color: royalblue;
+
+            grid-area: 1/1/2/span 3;
+        }
+
+        .container div:nth-child(2) {
+            background-color: slateblue;
+            grid-area: 2/1/span 2/2;
+        }
+
+        .container div:nth-child(3) {
+            background-color: salmon;
+            grid-area: 2/2/span 2/span 2;
+        }
+
+        .container div:nth-child(4) {
+            background-color: sandybrown;
+            grid-area: 4/1/5/4;
+            grid-area: 4/1/5/span 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item1">item1</div>
+        <div class="item2">item2</div>
+        <div class="item3">item3</div>
+        <div class="item4">item4</div>
+    </div>
+</body>
+
+</html>

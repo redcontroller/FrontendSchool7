@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid</title>
+    <style>
+        .container {
+            width: 530px;
+            height: 530px;
+            background-color: gray;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            /* gap: 3px; */
+        }
+
+        .container div:nth-child(1) {
+            background-color: blue;
+            grid-area: 1/1/3/4;
+        }
+
+        .container div:nth-child(2) {
+            background-color: skyblue;
+            grid-area: 3/1/3/3;
+        }
+
+        .container div:nth-child(3) {
+            background-color: orange;
+            grid-area: 3/3/4/4;
+        }
+
+        .container div:nth-child(4) {
+            background-color: yellow;
+            grid-area: 1/4/4/6;
+        }
+
+        .container div:nth-child(4) {
+            background-color: yellow;
+            grid-area: 1/4/4/47;
+        }
+
+        .container div:nth-child(5) {
+            background-color: pink;
+            grid-area: 4/1/7/3;
+        }
+
+        .container div:nth-child(6) {
+            background-color: green;
+            grid-area: 4/3/-1/-1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+
+</html>
