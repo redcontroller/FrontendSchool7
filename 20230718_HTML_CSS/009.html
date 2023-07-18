@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select</title>
+    <style>
+        textarea {
+            resize: none;
+        }
+    </style>
+</head>
+
+<body>
+    <label>
+        오늘의 점심
+        <input list="todya-lunch">
+        <datalist id="todya-lunch">
+            <!-- <option>햄버거</option>
+            <option>김밥</option>
+            <option>피자</option> -->
+
+            <option value="햄버거">
+            <option value="김밥">
+            <option value="피자">
+        </datalist>
+    </label>
+
+    <br>
+    <label>자기소개
+        <textarea cols="50" rows="10" minlength="10" maxlength="100" placeholder="입력하세요."></textarea>
+    </label>
+
+</body>
+
+</html>
