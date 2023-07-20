@@ -11,7 +11,6 @@ body {
 
 /* CSS 적용 */
 .heart-title {
-    /* font-size: 40px; */
     font-family: 'Pretendard-Bold';
     line-height: 1;
     padding: 0.5em 0 0.5em 2em;
@@ -36,14 +35,13 @@ body {
     min-width: 360px;
     padding: 56px 39px 56px 0;
     border-right: 1px solid #ff4f6e;
-    /* 늘어나게 할건지 여부, 다른 요소랑 비율 지정 */
-    flex-grow: 1;
-    /* 줄어들지 않겠다 (쪼그라트릴거니?) */
+    flex-grow:1;
     flex-shrink: 0;
 }
 
 .main .main-diary {
     flex-grow: 2;
+    /* background-color: skyblue; */
 }
 
 @media (max-width: 1024px) {
@@ -62,13 +60,14 @@ body {
 /* article */
 .list li {
     margin: 70px 0;
+    /* background-color: #ff4f6e; */
 }
 
 .diary-article {
     border-width: 4px 1px 1px 1px;
     border-style: solid;
     border-color: #677880;
-    padding: 60px 48px;
+    padding: 60px 40px;
 
     position: relative;
 }
@@ -117,7 +116,7 @@ body {
     left: 0;
 }
 
-.article-title {
+.articel-title {
     font-family: 'Pretendard-Bold';
 }
 
@@ -127,12 +126,12 @@ body {
 }
 
 .article-content {
-    color: #5a6a72;
+    color: #5A6A72;
     font-size: 14px;
+    font-weight: 400;
     line-height: 140%;
 }
 
-/* 버튼 */
 .button-group {
     width: 111px;
     height: 40px;

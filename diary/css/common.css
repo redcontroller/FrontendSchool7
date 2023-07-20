@@ -255,12 +255,3 @@ body {
     padding: 10px;
     font: inherit;
 }
-
-.button-group button {
-    opacity: 0.5;
-    transition: all 0.3s;
-}
-
-.button-group button:hover {
-    opacity: 1;
-}
