@@ -1,44 +1,43 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko-KR">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>media-query</title>
+    <title>srcset</title>
     <style>
         body {
-            height: 200vh;
+            margin: 0;
         }
 
-        /* @media (min-width:640px) and (max-width: 1000px) {
-            body {
-                background-color: skyblue;
-            }
-        }
-
-        @media (min-height:500px) and (max-height: 700px) {
-            body {
-                font-size: 100px;
-            }
-        } */
-
-        @media (orientation: landscape) {
-            body {
-                background-color: gold;
-            }
-        }
-
-        @media (orientation: portrait) {
-            body {
-                background-color: royalblue;
-            }
-        }
+        /* img {
+      width: 400px;
+    } */
     </style>
 </head>
 
 <body>
-    안녕하세요.
+    <!-- picture -->
+    <picture>
+        <!-- 1024 부터 -->
+        <source media="(min-width:1024px)" srcset="./img/img/lication-chilli.png">
+        <!-- 1023 까지 -->
+        <source media="(max-width:1023px)" srcset="./img/img/lication-chilli2.png">
+        <img src="./img/img/lication-chilli.png" alt="위니브 리케이션 속 칠리">
+    </picture>
+
+    <!-- srcset sizes 해상도 -->
+    <img srcset="./img/img/chilli_360px.jpg 360w, 
+            ./img/img/chilli_720px.jpg 720w, 
+            ./img/img/chilli_1440px.jpg 1440w" src="./img/img/chilli_360px.jpg" alt="다람쥐 캐릭터 칠리">
+
+
+    <img srcset="./img/img/chilli_360px.jpg 360w, 
+            ./img/img/chilli_720px.jpg 720w, 
+            ./img/img/chilli_1440px.jpg 1440w" sizes="(max-width:360px) 200px,
+                    (max-width:720px) 400px, 600px" src="./img/img/chilli_360px.jpg" alt="다람쥐 캐릭터 칠리">
+
 </body>
 
 </html>
