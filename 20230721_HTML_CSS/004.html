@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .container {
+            box-shadow: inset 0 0 20px red;
+            width: 600px;
+            margin: 100px auto;
+            display: flex;
+        }
+
+        .sidebar {
+            box-shadow: inset 0 0 20px blue;
+            padding: 10px;
+            width: 200px;
+
+            /* 안보이지만 들어간 기본값 */
+
+            /* 기본값 콘텐츠 너비 */
+            flex-basis: auto;
+            /* 기본값 콘텐츠 너비 */
+            min-width: auto;
+            /* 기본값 flex-shrink:1 */
+            flex-shrink: auto;
+        }
+
+        .main {
+            box-shadow: inset 0 0 20px orangered;
+            flex-basis: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">Sidebar</div>
+        <div class="main">Main</div>
+    </div>
+</body>
+
+</html>
