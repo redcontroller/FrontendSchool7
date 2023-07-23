@@ -1,0 +1,236 @@
+body {
+    margin:0;
+    font-family: sans-serif, Arial;
+}
+
+h1, p {
+    margin: 10px 0;
+    padding: 0;
+    font-family: inherit;
+    text-align: center;
+}
+
+div {
+    /* background-color: skyblue; */
+    /* box-shadow: 0 0 10px lightslategray; */
+}
+
+/* .main {
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+.wrap {
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.square {
+    width: 100px;
+    height: 100px;
+    background: seagreen;
+}
+
+.rectangle{
+    width: 150px;
+    height: 100px;
+    background-color: seagreen;
+}
+
+.cicle {
+    width: 100px;
+    height: 100px;
+    background-color: seagreen;
+    border-radius: 50%;
+}
+
+.oval {
+    width: 150px;
+    height: 100px;
+    background-color: seagreen;
+    border-radius: 50%;
+}
+
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid seagreen;
+}
+
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-right: 100px solid seagreen;
+}
+
+.triangle-down {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid seagreen;
+}
+
+.triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-bottom: 50px solid transparent;
+    border-left: 100px solid seagreen;
+}
+
+.triangle-top-left{
+    width: 0;
+    height: 0;
+    border-top: 100px solid seagreen;
+    border-right: 100px solid transparent;
+}
+
+.triangle-top-right {
+    width: 0;
+    height: 0;
+    border-top: 100px solid seagreen;
+    border-left: 100px solid transparent;
+}
+
+.triangle-bottom-left {
+    width: 0;
+    height: 0;
+    border-bottom: 100px solid seagreen;
+    border-right: 100px solid transparent;
+}
+
+.triangle-bottom-right {
+    width: 0;
+    height: 0;
+    border-bottom: 100px solid seagreen;
+    border-left: 100px solid transparent;
+}
+
+.parallelogram {
+    width: 150px;
+    height: 100px;
+    transform: skew(20deg);
+    background: seagreen;
+}
+
+.trapezoid {
+    width: 100px;
+    height: 0;
+    border-bottom: 100px solid seagreen;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+}
+
+/* 오각형 */
+.pentagon{
+    width: 100px;
+    border-width: 50px 18px 0;
+    border-style: solid;
+    border-color: seagreen transparent;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.pentagon::before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-width: 0 50px 45px;
+    border-style: solid;
+    border-color: transparent transparent seagreen;
+    position: absolute;
+    top: -95px;
+    left: -18px;
+}
+
+/* 육각형 별 */
+.star-six {
+    width: 0;
+    width: 0;
+    border-bottom: 100px solid seagreen;
+    border-left : 50px solid transparent;
+    border-right : 50px solid transparent;
+    position: relative;
+}
+
+.star-six::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 100px solid rgb(46, 139, 87);
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    position: absolute;
+    top: 30px;
+    left: -50px;
+}
+
+/* 오각형 별 */
+.star-five {
+    width: 0px;
+    height: 0px;
+    margin: 50px 0;
+    border-bottom: 70px solid seagreen;
+    border-right: 100px solid transparent;
+    border-left: 100px solid transparent;
+    transform: rotate(35deg);
+    position: relative;
+}
+
+.star-five::before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-bottom: 80px solid seagreen;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    position: absolute;
+    top: -45px;
+    left: -65px;
+    transform: rotate(-35deg);
+}
+
+.star-five::after {
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 3px;
+    left: -105px;
+    border-bottom: 70px solid seagreen;
+    border-right: 100px solid transparent;
+    border-left: 100px solid transparent;
+    transform: rotate(-70deg);
+}
+
+/* cylinder */
+.cylinder {
+    width: 200px;
+    height: 150px;
+    border-radius: 50% / 25%;
+    background-color: rgba(46, 139, 87, 0.8);
+    border: 1px solid black;
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.cylinder::after {
+    content: "";
+    width: 202px;
+    height: 75px;
+    background-color: rgba(46, 139, 87, 0.8);
+    border-radius: 50% / 50%;
+    border: 1px solid black;
+    box-sizing:border-box;
+    position: absolute;
+    left: -1px;
+    top: -1px;
+}
