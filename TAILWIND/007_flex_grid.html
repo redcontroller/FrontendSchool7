@@ -112,6 +112,12 @@
             max-xl    @media not all and (min-width: 1280px) { ... }
             max-2xl    @media not all and (min-width: 1536px) { ... } 
         -->
+        <!-- 
+            768px 이상일 때 : row
+            768px 미만일 때 : col
+            md:flew-row 가 뜻하는 바는 768px 이상일 때 flex-row 이고,
+            786px 미만일 때는 flex-col 입니다.
+         -->
         <div class="flex md:flex-row flex-col border-2 bg-red-500">
             <div class="border-2 bg-blue-500">hello</div>
             <div class="border-2 bg-blue-500">hello</div>
