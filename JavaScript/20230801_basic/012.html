@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+
+<body>
+    <script>
+        let s = 'abcdefghij'
+
+        console.log(s.length)
+        console.log(s.toUpperCase())
+        console.log(s.toLowerCase())
+
+        // 존재하는 값을 찾았을 때
+        console.log(s.indexOf('c'))
+        console.log(s.search('c'))
+
+        // 존재하지 않는 값을 찾았을 때
+        console.log(s.indexOf('z'))
+        console.log(s.search('z'))
+
+        // 정규표현식을 넣었을 때
+        // indexOf() 장점은 검색 위치 지정 가능하고,
+        // search() 장점은 정규표현식 사용 가능
+        // console.log(s.indexOf(/cd/))
+        console.log(s.search(/cd/))
+
+        let ss = 'paullab CEO 이호준 CTO 김창영'
+        console.log(ss.search(/C/g))
+        console.log(ss.search(/CTO/g))
+
+        // 버전
+        // indexOf ECMAScript5: 검색 위치 지정 가능
+        // search ECMAScript1 : 정규표현식 가능
+        let sss = 'paullab CEO 이호준 CTO 김창영'
+        console.log(sss.indexOf('C', 11)) // CTO 만 찾고 싶어요!
+        // search 를 더 많이 쓴다.
+    </script>
+</body>
+
+</html>

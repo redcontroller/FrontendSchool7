@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+
+<body>
+    <script>
+        // 원시타입 : string, number, bigint, undefined, symbol, null
+        // 문자열은 작은 따옴표(')나 큰따옴표("), 백틱(`)로 둘러싼 일련의 문자를 가르킵니다.
+        let s = 'hello\nworld'
+        let s1 = `hello
+world`
+        console.log(s)
+        console.log(s1)
+
+        let age = 10
+        console.log(`홍길동의 나이는 ${age}살 입니다.`)
+        console.log(`홍길동의 나이는 ${2 * age}살 입니다.`)
+        console.log('홍길동의 나이는 ' + age + '살 입니다.')
+
+        // 순서 출력
+        let name = '홍길동'
+        console.log(name[0])
+        console.log(name[100])
+        // javascript에서는 문자열의 순서를 넘어갔을 때 에러가 발생하지 않고 undefined 를 출력합니다.
+        console.log(name[-1]) // undefined // 다른 언어 마지막 문자를 출력한다.
+
+        // 문자열의 사칙연산
+        console.log('1' + 2 + 3) // 다른 언어 error
+        console.log(2 + 3 + '1') // 다른 언어 error
+        console.log(2 + 3 + + '1') // 다른 언어 error
+        console.log('b' + 'a' + + 'a') // +'a' 이 NaN
+        console.log('lee' + 'hojun')
+        console.log('hojun' * 3)
+
+        // 형변환
+        console.log('1' + '1') // 11이 아니라 2가 출력되게 할 수 있을까?
+        console.log(+'1' + +'1') // 묵시적 형변환. 권하지 않습니다.
+        console.log(Number('1') + Number('1')) // 권하지 않습니다.
+        console.log(parseInt('1') + parseInt('1')) // 권합니다.
+        // parseFloat('10.5')
+        console.log(parseInt(undefined))
+        console.log(1 + 1) // 2가 아니라 11이 출력되게 할 수 있을까요?
+        console.log(String(1) + String(1)) // 권하지 않습니다.
+        // console.log(1.toString() + 1) // 권하지 않습니다. // 가능한 코드가 아닙니다.
+        console.log((1).toString() + (1).toString()) // 가능한 코드 입니다.
+        let x = 10
+        console.log(x.toString() + x.toString())
+    </script>
+
+</html>
