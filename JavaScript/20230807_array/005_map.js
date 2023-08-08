@@ -22,8 +22,8 @@
 
 // forEach 와 차이점
 // 1. forEach 는 return 이 없습니다.
-// 2. map 은 원본을 수정하여 새로운 배열을 만들고,
-//    forEach 는 원본 배열을 변경하지 않는다.
+// 2. map 은 새로운 배열을 만들어 retrun 하고,
+//    forEach 는 원본 배열을 만들지 않고 순회 돌며 실행만 않는다.
 
 // forEach 의 경우 1부터 100까지 더하는 코드
 let sum = 0

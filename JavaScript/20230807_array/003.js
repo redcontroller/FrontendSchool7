@@ -88,6 +88,7 @@ userInput.forEach((v,i) => {
 })
 console.log(sortValue)
 
+// 정답
 function solution(emergency) {
     const sortValue = [...emergency].sort((a,b) => b-a)
     emergency.forEach((v,i) => {
