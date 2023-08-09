@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for</title>
+</head>
+
+<body>
+    <script>
+        let cars = ["BMW", "Volvo", "Saab", "Ford", "Flat", "Audi"];
+        let text = "";
+        text += '<section><h2>' + cars[0] + '</h2></section>'
+        text += '<section><h2>' + cars[1] + '</h2></section>'
+        text += '<section><h2>' + cars[2] + '</h2></section>'
+        text += '<section><h2>' + cars[3] + '</h2></section>'
+        text += '<section><h2>' + cars[4] + '</h2></section>'
+
+        console.log(text);
+        // document.body.innerHTML = text;
+
+        let cars2 = ["BMW", "Volvo", "Saab", "Ford", "Flat", "Audi"];
+        for (let i = 0; i < cars2.length; i++) {
+            text += '<section><h2>' + cars2[i] + '</h2></section>'
+        }
+        document.body.innerHTML = text;
+
+        //반복문
+        for (var i = 0; i < 10; i++) {
+            document.write(i, '<br>');
+        }
+
+        //1부터 100까지의 짝수의 합
+        let s = 0;
+        for (var i = 0; i < 101; i += 2) {
+            document.write(i, '<br>');
+            s += i;
+        }
+        document.write(s, '<br>');
+
+        //구구단
+        for (var i = 2; i < 10; i++) {
+            for (var j = 1; j < 10; j++) {
+                document.write(`${i} X ${j} = ${i * j} <br>`);
+            }
+        }
+
+        //100보다 작은 3의 배수와 5의 배수의 합
+        s = 0;
+        for (var i = 0; i < 101; i++) {
+            if (i % 3 == 0 || i % 5 == 0) {
+                document.write(i, '<br>');
+                s += i;
+            }
+        }
+        document.write(s, '<br>');
+    </script>
+</body>
+
+</html>
