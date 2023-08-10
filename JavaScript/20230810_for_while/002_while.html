@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>while</title>
+</head>
+
+<body>
+    <script>
+        let num = 0;
+
+        while (num < 11) {
+            document.write(num, '<br>');
+            num += 1;
+        }
+
+        let input;
+
+        do {
+            // console.log('hello');
+            input = prompt("숫자를 입력하세요.");
+        } while (isNaN(input));
+
+        console.log("입력한 숫자는 " + input + "입니다.");
+
+
+
+    </script>
+</body>
+
+</html>
