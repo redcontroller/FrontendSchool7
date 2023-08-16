@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>destructuring</title>
+</head>
+
+<body>
+    <script>
+        let { one: myNum } = { one: 1 };
+        console.log(myNum); // 1
+
+        let { one: one } = { one: 1 };
+        console.log(one); // 1
+
+        let { one } = { one: 1 };
+        console.log(one); // 1
+
+        let { one, two, three, four } = { one: 1 }
+        // 디스트럭쳐링은 콜론을 통해 변수를 추가적으로 생성할 수 있습니다.
+        console.log(one); // 1
+        console.log(two); // undefined
+        console.log(three); // undefined
+        console.log(four); // undefined
+
+        /**
+        let food1, food2, food3;
+        
+        const categories = {food1 : '과일', food2 : '채소', food3 : '육류'};
+        
+        food1 = categories.food1;
+        food2 = categories.food2;
+        food3 = categories.food3;
+        */
+
+        const { food1, food2, food3 } = { food1: '과일', food2: '채소', food3: '육류' };
+
+        console.log(food1, food2, food3);
+    </script>
+</body>
+
+</html>

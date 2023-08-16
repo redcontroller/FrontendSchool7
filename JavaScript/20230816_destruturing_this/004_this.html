@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+</head>
+
+<body>
+    <script>
+        const peter = {
+            name: 'Peter Parker',
+            sayName: function () {
+                console.log(this.name);
+            }
+        }
+
+        const bruce = {
+            name: 'Bruce Wayne',
+        }
+        peter.sayName.call(bruce);
+
+// peter.sayName.call(bruce) 의 결과는 무엇이 될지 생각해 봅시다.
+    </script>
+</body>
+
+</html>
