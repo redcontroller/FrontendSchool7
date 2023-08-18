@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>json</title>
+</head>
+
+<body>
+    <script>
+        const json = '{"result": true, "count":42}';
+        const obj = JSON.parse(json);
+        console.log(obj);
+        console.log(typeof obj);
+
+        const json2 = '[1,2,3,[1,2,3]]';
+        const arr = JSON.parse(json2);
+        console.log(arr);
+        console.log(arr instanceof Array); // [인스턴스] instanceof [생성자 함수]
+
+        const obj2 = { result: true, conut: 42 };
+        const json3 = JSON.stringify(obj2);
+        console.log(json3);
+        console.log(typeof json3);
+
+        // JSON을 이용한 깊은 복사
+        // l 객체를 문자열화 했다가 다시 객체로 변환하기 때문에 새로운 객체를 생성하는것과 동일합니다. 하지만 함수는 제대로 복사가 불가능하다는 단점이 있습니다. 제대로된 깊은 복사를 위해서는 structuredClone 메소드를 사용해야합니다.
+        let l = [10, 20, 30];
+        let a = JSON.parse(JSON.stringify(l));
+        a[0] = 1000;
+
+        console.log(l);
+
+        let l2 = { ten: 10, twenty: 20, thirty: { forty: 40 } };
+        // let a2 = JSON.parse(JSON.stringify(l));
+        let a2 = structuredClone(l2);
+        a2[0] = 1000;
+
+        console.log(l);
+
+
+        // Ajax 통신을 통해 슈퍼히어로 Json 데이터를 받아봅시다!
+    </script>
+</body>
+
+</html>

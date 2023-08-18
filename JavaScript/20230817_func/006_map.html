@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map</title>
+</head>
+
+<body>
+    <script>
+        new Map();
+        const myMap = new Map();
+        myMap.set('하나', 1);
+        console.log(myMap.get('하나'));
+        myMap.set(true, 1);
+        function test() { }
+        myMap.set(test, 'my function');
+        console.log(myMap.has(1));
+        console.log(myMap.has('하나'));
+        console.log(myMap.has(test));
+
+    </script>
+</body>
+
+</html>

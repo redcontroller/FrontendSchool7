@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>실습</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-group {
+            list-style-position: inside;
+            width: 300px;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+        }
+
+        .box {
+            background-color: skyblue;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .green {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <ul class="btn-group">
+        <li><button class="btn-red" type="button">빨강</button></li>
+        <li><button class="btn-yellow" type="button">노랑</button></li>
+        <li><button class="btn-green" type="button">초록</button></li>
+    </ul>
+    <script>
+        const box = document.querySelector('.box');
+        const btnRed = document.querySelector('.btn-red');
+        const btnYellow = document.querySelector('.btn-yellow');
+        const btnGreen = document.querySelector('.btn-green');
+
+        btnRed.addEventListener('click', function () {
+            box.classList.toggle("red");
+        })
+
+        btnYellow.addEventListener('click', function () {
+            box.classList.toggle("yellow");
+        })
+
+        btnGreen.addEventListener('click', function () {
+            box.classList.toggle("green");
+        })
+    </script>
+</body>
+
+</html>

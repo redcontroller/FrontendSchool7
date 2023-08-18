@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paint rect</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            background-color: transparent;
+            border: none;
+            font-size: inherit;
+            font-weight: inherit;
+            list-style: none;
+        }
+
+        .wrap {
+            display: flex;
+            margin: auto;
+            width: fit-content;
+            gap: 10px;
+        }
+
+        .canvas {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            margin: auto;
+        }
+
+        .btns {
+            margin: 5px auto;
+        }
+
+        .btns li {
+            background-color: rgb(255, 255, 255);
+            box-shadow: 2px 2px 5px rgb(134, 128, 128);
+            border-radius: 8px;
+            margin: 5px;
+            width: 100%;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .colors-red {
+            background-color: red;
+        }
+
+        .colors-yellow {
+            background-color: yellow;
+        }
+
+        .colors-green {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="canvas"></div>
+        <ul class="btns">
+            <li><button class="paint-rect">red</button></li>
+            <li><button class="paint-rect">yellow</button></li>
+            <li><button class="paint-rect">green</button></li>
+        </ul>
+    </div>
+    <script>
+        const btn = document.querySelectorAll(".paint-rect");
+        const canvas = document.querySelector(".canvas");
+        function makeColorful(e) {
+            canvas.classList.remove('colors-red', 'colors-green', 'colors-yellow');
+
+            const newClass = e.target.innerText;
+            canvas.classList.add(`colors-${newClass}`);
+        }
+        btn.forEach((x, i) => {
+            x.addEventListener("click", makeColorful);
+        });
+    </script>
+</body>
+
+</html>

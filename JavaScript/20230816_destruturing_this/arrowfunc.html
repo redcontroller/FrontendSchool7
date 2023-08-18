@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this keyword</title>
+    <style>
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box span {
+            display: block;
+        }
+
+        .opening {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box open">
+        <span>This is a box</span>
+    </div>
+
+    <script>
+        // box 클래스를 가진 div 를 가져온다.
+        const box = document.querySelector(".box");
+        // click 이벤트 헨들러를 등록
+        box.addEventListener("click", function () { // () => {
+            // div에 opening 클래스를 토글
+            this.classList.toggle("opening"); // box
+            // setTimeout(function () {
+            //     // 클래스를 다시 토글
+            //     this.classList.toggle("opening"); // window 객체를 참조
+            // }, 500);
+            setTimeout(() => {
+                // 클래스를 다시 토글
+                this.classList.toggle("opening"); // box 객체를 참조
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>

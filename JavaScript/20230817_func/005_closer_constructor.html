@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>closer_constructor</title>
+</head>
+
+<body>
+    <script>
+        function Info(age, address) {
+            this.address = address;
+            this.age = age;
+        }
+        function person(name, age, address) {
+            const newInfo = new Info(age, address);
+            return {
+                name: name,
+                getInfo() {
+                    return newInfo;
+                },
+                setAge(age) {
+                    this.newInfo.age = age;
+                }
+            }
+        }
+        const my = person('지현', 26, "인천");
+        my.getInfo();
+        const you = person('멋사', 7, '서울');
+        you.getInfo();
+    </script>
+</body>
+
+</html>
