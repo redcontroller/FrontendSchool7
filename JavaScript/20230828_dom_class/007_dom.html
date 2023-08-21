@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom</title>
+</head>
+
+<body>
+    <p style="text-align: center"></p>
+    <input type="text">
+    <button>작동!</button>
+
+    <script>
+        const text = document.querySelector('p');
+        const inp = document.querySelector('input');
+        const btn = document.querySelector('button');
+
+        btn.addEventListener('click', function () {
+            // text.textContent = inp.value; // "<img src='x' onerror='alert(1)'>" input 에 입력해서 작동 확인
+            text.innerHTML = inp.value; // "<img src='x' onerror='alert(1)'>" input 에 입력해서 작동 확인
+        });
+
+    </script>
+</body>
+
+</html>

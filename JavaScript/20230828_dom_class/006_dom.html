@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>innerHTML</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <figure>
+        <img src="" alt="청바지 삼종세트">
+        <figcaption>상품 가격 : 29,900원 <span class="hidden">VIP 회원이라면 29,900원!!</span></figcaption>
+    </figure>
+
+
+    <script>
+        const cost = document.querySelector('figcaption');
+        console.log(cost.textContent); // 모든 텍스트를 가져온다.
+        console.log(cost.innerText); // HTML 을 인식하고 화면에 렌더링된 Text 만을 가져온다.
+    </script>
+</body>
+
+</html>

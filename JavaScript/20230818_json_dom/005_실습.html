@@ -7,61 +7,94 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>실습</title>
     <style>
-        div {
-            width: 300px;
-            height: 300px;
-        }
-
-        .btn-group {
-            list-style-position: inside;
-            width: 300px;
-            display: flex;
-            justify-content: space-between;
-            box-sizing: border-box;
+        .container {
+            margin: 0 auto;
+            max-width: 300px;
         }
 
         .box {
+            width: 100%;
+            height: 300px;
             background-color: skyblue;
+            transition: all 0.3s;
         }
 
-        .red {
+
+        .btn-group {
+            list-style-position: inside;
+            box-sizing: border-box;
+            width: 100%;
+            padding: 20px 30px;
+            width: 300px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .box.red {
             background-color: red;
         }
 
-        .yellow {
+        .box.yellow {
             background-color: yellow;
         }
 
-        .green {
+        .box.green {
             background-color: green;
         }
     </style>
 </head>
 
 <body>
-    <div class="box"></div>
-    <ul class="btn-group">
-        <li><button class="btn-red" type="button">빨강</button></li>
-        <li><button class="btn-yellow" type="button">노랑</button></li>
-        <li><button class="btn-green" type="button">초록</button></li>
-    </ul>
+    <div class="container">
+        <div class="box"></div>
+        <ul class="btn-group">
+            <li><button class="red" type="button">빨강</button></li>
+            <li><button class="yellow" type="button">노랑</button></li>
+            <li><button class="green" type="button">초록</button></li>
+        </ul>
+    </div>
     <script>
-        const box = document.querySelector('.box');
-        const btnRed = document.querySelector('.btn-red');
-        const btnYellow = document.querySelector('.btn-yellow');
-        const btnGreen = document.querySelector('.btn-green');
+        const box = document.querySelector('.box'),
+            btns = document.querySelectorAll('button');
 
-        btnRed.addEventListener('click', function () {
-            box.classList.toggle("red");
+        btns.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                box.className = 'box';
+                box.classList.add(btn.className);
+            })
         })
 
-        btnYellow.addEventListener('click', function () {
-            box.classList.toggle("yellow");
-        })
+// btns.forEach((btn) => {
+//     btn.addEventListener('click', () => {
+//         box.classList.remove('red', 'yellow', 'green');
+//         if (btn.classList.contains('red')) {
+//             box.classList.add('red');
+//         } else if (btn.classList.contains('yellow')) {
+//             box.classList.add('yellow');
+//         } else if (btn.classList.contains('green')) {
+//             box.classList.add('green');
+//         }
+//     })
+// });
 
-        btnGreen.addEventListener('click', function () {
-            box.classList.toggle("green");
-        })
+// btnRed = document.querySelector('.btn-red'),
+// btnYellow = document.querySelector('.btn-yellow'),
+// btnGreen = document.querySelector('.btn-green');
+
+// btns.addEventListener('click', function () {
+//     box.classList.remove('red', 'yellow', 'green');
+//     box.classList.add('red');
+// })
+
+// btns.addEventListener('click', function () {
+//     box.classList.remove('red', 'yellow', 'green');
+//     box.classList.add("yellow");
+// })
+
+// btns.addEventListener('click', function () {
+//     box.classList.remove('red', 'yellow', 'green');
+//     box.classList.add("green");
+// })
     </script>
 </body>
 

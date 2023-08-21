@@ -35,7 +35,7 @@
 
         let l2 = { ten: 10, twenty: 20, thirty: { forty: 40 } };
         // let a2 = JSON.parse(JSON.stringify(l));
-        let a2 = structuredClone(l2);
+        let a2 = structuredClone(l2);  // 깊은 복사를 통한 복제를 만들 수 있는 새로운 함수
         a2[0] = 1000;
 
         console.log(l);
