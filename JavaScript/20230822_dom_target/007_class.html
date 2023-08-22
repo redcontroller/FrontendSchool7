@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class</title>
+</head>
+
+<body>
+    <script>
+        const me = {
+            name: '한재현',
+            address: '제주도 제주시 인다 1길',
+            phoneNum: '010-8000-0000',
+            canWalk: function () {
+                console.log('재현이가 걷는다.');
+            },
+            teaching: function (student) {
+                student.levelUp();
+            }
+        }
+
+        const lion = {
+            level: 1,
+            levelUp: function () {
+                this.level++;
+            }
+        }
+
+        me.teaching(lion);
+        console.log(lion);
+
+        const morgan = {
+            name: '김모건',
+            address: '서울 영등포구',
+            phoneNum: '010-1234-5678',
+            training: function (exercise) {
+                console.log('운동을 한다.');
+                exercise.body();
+                console.log(`weight: ${pizza.weight}`);
+            },
+            eating: function (food) {
+                console.log('먹는다.');
+                food.body();
+                console.log(`weight: ${squat.weight}`);
+            },
+            working: function (student) {
+                console.log('일을 한다.');
+                student.account();
+                console.log(`money: ${squat.money}`);
+            }
+        };
+
+        const pizza = {
+            weight: 80,
+            body: function () {
+                this.weight++;
+            }
+        };
+        const squat = {
+            weight: 80,
+            body: function () {
+                this.weight--;
+            }
+        };
+        const job = {
+            money: 1,
+            account: function () {
+                this.money++;
+            }
+        };
+        morgan.training(pizza);
+        morgan.eating(squat);
+        morgan.working(job);
+    </script>
+</body>
+
+</html>

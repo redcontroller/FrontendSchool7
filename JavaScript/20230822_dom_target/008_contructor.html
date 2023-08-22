@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>constructor</title>
+</head>
+
+<body>
+    <script>
+
+        function Factory() { }
+        let robot1 = new Factory();
+
+        console.log(robot1 instanceof Factory); // 생성자를 통해 생성된 instance 인지 확인
+
+        // 생성자 함수의 this 는 생성자를 통해 만드러진 인스턴스를 참조한다.
+        function Factory(name) {
+            this.myname = name;
+            // robot1_1.myname = '재현';
+
+            this.sayYourName = function () {
+                console.log('삘비리비리리 제 이름은 ' + this.myname + '입니다....!!!');
+            }
+        }
+
+        const robot1_1 = new Factory('재현');
+        robot1_1.sayYourName();
+
+    </script>
+</body>
+
+</html>
