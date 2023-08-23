@@ -21,8 +21,9 @@
         const parent = document.querySelector('.parent');
         parent.addEventListener('click', (event) => {
 
-            console.log(this);
-            console.log(event.currentTarget);
+            console.log(this); // window
+            console.log(event.target);  // 선택한 요소 <button class="btn-first" type="button">버튼1</button>
+            console.log(event.currentTarget); // EventListener 연결된 요소 <article class='parent'> ... </article>
 
             // 이벤트가 발생한 대상을 조건식으로 특정하기
             if (event.targetnodeName == "LI") {

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소시지 클래스</title>
+</head>
+
+<body>
+    <script>
+        class 소시지 {
+            constructor(a, b) {
+                this.a = a;
+                this.b = b;
+            }
+            taste() {
+                console.log(`${this.a}와 ${this.b} 맛이 난다!`)
+            }
+        }
+        class FiresSausage extends 소시지 {
+            taste() { // 메서드 이름을 바꿔야 한다!
+                // super.taste();
+                this.taste(); // FiresSausage 인스턴스, (재귀호출 형태로)무한호출된다.
+                console.log('불맛이 나기 시작합니다.');
+            }
+        }
+
+        const one = new FiresSausage('불고기', '파');
+        one.taste();
+    </script>
+</body>
+
+</html>

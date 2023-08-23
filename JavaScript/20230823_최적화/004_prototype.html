@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프로토타입의 상속</title>
+</head>
+
+<body>
+    <script>
+        // arr 가 hasOwnProperty를 사용할수 있는것은 prototype 을 통해서 상속 받았기 때문!!
+        function Parent() {
+            this.name = '재현';
+        }
+        Parent.prototype.rename = function (name) {
+            this.name = name;
+        }
+        Parent.prototype.sayName = function () {
+            console.log(this.name);
+        }
+
+        function Child() {
+            // call 메소드를 통해 Parent 의 프로퍼티를 상속받을 수 있다.
+            Parent.call(this); // child 의 this 를 넣는다.
+            this.newName = '소을';
+        }
+
+        // Object.creaet 메소드를 통해 프로토타이블 연결합니다.
+        Child.prototype = Object.create(Parent.prototype); // 지정된 프로토타입 객체를 갖는 새 객체를 만듭니다.
+
+        // 상속받는 자식만의 메소드난 프로퍼티를 만드는 것도 가능합니다.
+        Child.prototype.hello = function () {
+            console.log('hello!');
+        }
+
+        Child.prototype.canWalk = function () {
+            console.log('now i can walk!!');
+        }
+
+        const child = new Child();
+        console.log(child.name); // 재현
+        console.log(child.__proto__);
+
+        child.hello(); // hello!
+
+    </script>
+</body>
+
+</html>

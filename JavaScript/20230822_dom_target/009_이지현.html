@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이지현 실습 코드</title>
+</head>
+
+<body>
+    <script>
+        //음식과 재고를 같이 입력받는다면?
+        //"피자", 1, "햄버거", 3, "라면", 2
+
+        function RobotFactoryStore(foodNames) {
+            //접근 불가
+            const foodList = foodNames.filter((e) => typeof e === "string");
+            const foodStore = foodNames.filter((e) => typeof e === "number");
+
+            //모든 음식 재고 파악하기
+            let allFoodCount = foodStore.reduce((a, c) => (a += c), 0);
+
+            let randomNum = parseInt(Math.random() * foodList.length);
+            let prevNum = -1;
+            const getFood = () => {
+                //예외처리
+                if (allFoodCount === 0) return "재고없음";
+                //하나의 음식만 남은 경우
+                if (foodStore.filter((e) => e != 0).length === 1) prevNum = -1;
+                //랜덤한 수와 기존 출력한 음식 비교
+                while (prevNum === randomNum || foodStore[randomNum] === 0) {
+                    randomNum = parseInt(Math.random() * foodList.length);
+                }
+                prevNum = randomNum;
+                foodStore[randomNum]--;
+                allFoodCount--;
+                return foodList[randomNum];
+            };
+
+            const countFood = () => {
+                const remainFoodList = foodStore.filter((e) => e > 0);
+                if (remainFoodList.length === 0) return "재고없음";
+                let list = "";
+                remainFoodList.forEach((e, i) => {
+                    list += `${foodList[i]}/${e} `;
+                });
+                return list;
+            };
+
+            function Robot() {
+                this.serveFood = getFood;
+                this.remainFoods = countFood;
+            }
+
+            return new Robot();
+        }
+
+        const newRobot = RobotFactoryStore(["피자", 1, "햄버거", 3, "라면", 2]);
+    </script>
+</body>
+
+</html>

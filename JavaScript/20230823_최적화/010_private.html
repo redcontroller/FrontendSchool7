@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>private property getter setter</title>
+</head>
+
+<body>
+    <script>
+        // 
+        class Robot2 {
+            #password
+
+            constructor(name, pw) {
+                this.name = name;
+                this.#password = pw;
+            }
+
+
+            sayYourName() {
+                console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+            }
+
+            // getPassword() {
+            //     return this.#password;
+            // }
+
+            // setPassword(pw) {
+            //     this.#password = pw;
+            // }
+
+            get password() { // 키워드를 사용해서 메서드를 선언
+                return this.#password
+            };
+
+            set password(pw) {
+                this.#password = pw;
+            }
+        }
+
+        const robot2 = new Robot2('재현', 123123);
+        // console.log(robot2.getPassword());
+        // robot2.setPassword(454545);
+        // console.log(robot2);
+        console.log(robot2.password); // password 프로퍼티가 있는 것 처럼 사용할 수 있다.
+        robot2.password = 456456; // 함수가 아닌 프로퍼티처럼 변경할 수 있다.
+        console.log(robot2.password);
+    </script>
+</body>
+
+</html>

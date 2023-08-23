@@ -167,7 +167,7 @@
             // console.log(event.target.nodeName);
             if (event.target.nodeName === "BUTTON") {
                 btn.textContent = event.target.textContent;
-                btn.classList.remove('on');
+                btn.classList.remove('on'); // 가장 가까운 상위 요소 제거
             }
         })
     </script>

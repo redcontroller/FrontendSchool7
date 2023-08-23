@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>소시지 클래스</title>
+</head>
+
+<body>
+    <script>
+        class Factory {
+            constructor(taste1, taste2) {
+                this.taste1 = taste1;
+                this.taste2 = taste2;
+            }
+
+            taste() {
+                console.log(`${this.taste1}와 ${this.taste2} 맛이 난다!`);
+            }
+        }
+
+        class FiresSausage extends Factory {
+            fireTaste() {
+                this.taste();
+                console.log('불맛이 난다!');
+            }
+        }
+
+        const sausage = new FiresSausage('소고기', '파');
+        sausage.fireTaste();
+        // 소고기와 파 맛이 난다!
+        // 불맛이 난다!
+    </script>
+</body>
+
+</html>
