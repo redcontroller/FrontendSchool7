@@ -5,3 +5,25 @@
 .test2 {
     font-size: min(10, 11, 12, 13, 14, 15);
 }
+
+// 1) 색상 함수
+// - lighten(color, amount) : 기존 색상의 밝기를 높입니다.( 0%-100% 사이의 값 )
+// - darken(color, amount) : 기존 색상의 밝기를 낮춥니다.( 0%-100% 사이의 값 )
+// - mix(color1, color2, weight) : 2개의 색상을 섞어서 새로운 색상을 만듭니다.
+
+// 2) 숫자 함수
+// - max(number, ..) : 괄호에 넣은 값 중에 가장 큰 수를 반환합니다.
+// - min(number, ..) : 괄호에 넣은 값 중에 가장 작은 수를 반환합니다.
+// - parcentage(number) : 퍼센트로 숫자를 바꿔줍니다.
+// - comparable(num1,num2) : 숫자1과 숫자2가 비교 가능한지 확인 후 true,false 값을 반환합니다.
+
+// 3) 문자 함수
+// - srt-insert(string,insert,index) : 문자열에 원하는 위치(index)에 문자를 넣은 후(insert), 새로운 문자열을 반환합니다.
+// - str-index(string,substring) : 문자열에서 해당 문자의 index 값을 반환합니다.
+// - to-upper-case(string) : 문자열 전부를 대문자로 바꿔줍니다.
+// - to-lower-case(string)  : 문자열 전부를 소문자로 바꿔줍니다.
+
+// 4) 확인 함수
+// - unit(number) : 숫자의 단위를 반환해 줍니다.
+// - unitless(number) : 단위를 가지고 있는지 판단하여 true,false 값을 반환합니다.
+// - variable-exists(name) : 변수가 현재 범위에 존재하는지 판단하여 true,false 값을 반환합니다. 이 함수의 인수는  `$`없이 사용합니다.

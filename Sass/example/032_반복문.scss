@@ -4,7 +4,7 @@
 
 $test-array: 'top' 'right' 'bottom' 'left';
 
-@each $position in $test-array {
+@each $position in $test-array { // JS for...of 와 같다.
     .border-#{$position} {
         border-#{$position}: 1px solid #000;
     }

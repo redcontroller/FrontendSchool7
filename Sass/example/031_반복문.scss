@@ -4,7 +4,7 @@
 
 $test-array: 'top' 'right' 'bottom' 'left';
 
-@for $i from 1 through 5 {
+@for $i from 1 through 5 { // 1 ~ 5 (5회)
     .box-#{$i} {
         width: 100px * $i;
         height: 100px * $i;
