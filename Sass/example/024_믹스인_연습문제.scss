@@ -1,0 +1,28 @@
+// input: box(100, r) // r은 사각형, rect입니다.
+// output: 
+// .one {
+//     width: 100px;
+//     height: 100px;
+//     background-color: skyblue;
+// }
+
+@mixin box($size, $shape) {
+    width: #{$size}px;
+    // width: $size+px;
+    height: #{$size}px;
+    // height: $size+px;
+    background-color: skyblue;
+
+    @if ($shape == "c"){ //소괄호를 하지 않아도 됩니다. 'r'와 r는 같습니다.
+        border: 1px solid black;
+        border-radius: 50%;
+    }
+}
+
+.one {
+    @include box(100, r); // 입력값이 꼭 따옴표가 있을 필요는 없습니다.
+}
+
+.two {
+    @include box(100, c);
+}

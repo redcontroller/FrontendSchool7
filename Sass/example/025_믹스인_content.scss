@@ -1,0 +1,23 @@
+// content 는 없어도 되는 문법 아니야? 라는 왜가 있을 수 있습니다. 용도가 확실한 문법입니다.
+// 가능하지만 이렇게는 사용하지 않음
+
+@mixin sample {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    @content;
+}
+
+.one {
+    @include sample {
+        background-color: red;
+    }
+    
+}
+
+.two {
+    @include sample{
+        background-color: green;
+    }
+}

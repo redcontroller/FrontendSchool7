@@ -1,0 +1,9 @@
+.test li:nth-child(1) .thumb {
+  background-image: url(./assets/img/home_menu_icon1.jpg);
+}
+.test li:nth-child(2) .thumb {
+  background-image: url(./assets/img/home_menu_icon2.jpg);
+}
+.test li:nth-child(3) .thumb {
+  background-image: url(./assets/img/home_menu_icon3.jpg);
+}/*# sourceMappingURL=027_믹스인_실무사례.css.map */
