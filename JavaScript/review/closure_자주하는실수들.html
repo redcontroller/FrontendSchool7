@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>클로저 자주하는 실수들</title>
+</head>
+
+<body>
+    <script>
+        var funcs = [];
+        for (var i = 0; i < 3; i++) {
+            funcs[i] = function () { return i; };
+        }
+
+        // func = [ function(){ return i; }, function(){ return i; }, function(){ return i; } ]
+
+        for (var j = 0; j < funcs.length; j++) {
+            console.log(funcs[j]());
+        }
+        // 3 3 3
+        var funcs1 = [];
+        for (var i = 0; i < 3; i++) {
+            funcs1[i] = (function (id) {
+                return function () {
+                    return id;
+                };
+            }(i));
+        }
+
+        for (var j = 0; j < funcs1.length; j++) {
+            console.log(funcs1[j]());
+        }
+        // 1 2 3
+
+        let funcs3 = [];
+        for (let i = 0; i < 3; i++) {
+            funcs3[i] = function () { return i; };
+        }
+
+        // func = [ function(){ return i; }, function(){ return i; }, function(){ return i; } ]
+
+        for (let i = 0; i < funcs3.length; i++) {
+            console.log(funcs3[i]());
+        }
+        // 1 2 3
+    </script>
+</body>
+
+</html>

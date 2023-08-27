@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Class Fields</title>
+</head>
+
+<body>
+    <script>
+        class Person {
+            #age;
+            constructor(name, age) {
+                this.name = name; // public
+                this.#age = age;
+            }
+            sayHi() {
+                console.log(`Hi! My name is ${this.name}. I am ${this.#age}.`);
+            }
+        }
+
+        const me = new Person('Lee', 20);
+        me.sayHi(); // Hi! My name is Lee. I am 20.
+        console.log(me.name); // Lee
+
+        console.log(me); // Person {name: 'Lee', #age: 20}
+        console.log(me.#age) // Uncaught SyntaxError 출력되어야 하지만 개발자 도구에서 20이 출력됬다.
+
+        const you = new Person('Kim', 30);
+        you.sayHi(); // Hi! My name is Kim. I am 30.
+        console.log(you.name); // Kim
+
+        console.log(you); // Person {name: 'Kim', #age: 30}
+        console.log(you.#age) // Uncaught SyntaxError 출력되어야 하지만 개발자 도구에서 30이 출력됬다.
+
+        me.sayHi(); // Hi! My name is Lee. I am 20. (값이 유지된다.)
+        console.dir(you); // Person
+    </script>
+</body>
+
+</html>
