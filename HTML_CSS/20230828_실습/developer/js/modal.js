@@ -51,6 +51,7 @@ function handleTab(e) {
             if(activeEl === lastEl) {
                 e.preventDefault();
                 firstEl.focus();
+                // tab 기능을 수행
             }
         }
     }
