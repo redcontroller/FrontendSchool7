@@ -87,8 +87,21 @@ section {
     aspect-ratio: 1;
     object-fit: cover;
     border-radius: 50%;
+
+    /* 이미지 개별 drag 가 안되도록 */
+    pointer-events: none;
 }
 
 .drag-item~li {
     margin-top: 10px;
+}
+
+/* dragging */
+.drag-item.dargging {
+    border:1px dashed #CCC;
+    background-color: #f9f9f9;
+}
+
+.drag-item.dragging > * {
+    opacity: 0.2;
 }
