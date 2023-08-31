@@ -9,6 +9,7 @@
 - [ ] drag & drop : Todo List 예쁘기 꾸미기
 - [ ] selector box : 다른 페이지에 기능 추가
 - [x] 로그인 화면 : BBQ 초대장
+- [ ] 이미지 스프라이트 기법 활용
 
 ## 구현실습 List
 

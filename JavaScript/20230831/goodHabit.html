@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Habits</title>
+</head>
+
+<body>
+    <script>
+        'use strict';
+
+        const aespa = ["카리나", "윈터", "지젤", "닝닝"];
+        // 결과 : ['카리나💖', '윈터💖', '지젤💖', '닝닝💖']
+
+        const aespa2 = aespa.map((item) => {
+            return item + '💖';
+        })
+
+        console.log(aespa);
+        console.log(aespa2);
+
+        // 선얺하지 않은 변수에 값을 할당할 수 없습니다.
+        str = 'hello';
+        // 예약어를 사용해도 선언된다.
+        var undefined = "undefined";
+
+        // 읽기 전용객체에 값을 할당하면 안됩니다.
+        console.log(Math.PI);
+        Math.PI = 0; // 안되지만 에러는 안나온다. ( => 조용한 에러)
+        console.log(Math.PI);
+        var Infinity = 100;
+
+        // 지울 수 없는 값을 지우려고 하면 안됩니다.
+        const employee = {
+            firstName: 'john'
+        }
+
+        delete employee.firstName;
+        delete Object.prototype; // 에러는 나지 않지만 안된다. (조용한 에러 처리됨)
+
+        // 함수의 매개변수 이름으로 중복된 이름을 사용할 수 없습니다.
+        function myFunc(a, a, b) {
+            console.log(a, b); // 2 3
+
+            console.log(a + a + b);
+        }
+
+        myFunc(1, 2, 3);
+
+
+    </script>
+</body>
+
+</html>
