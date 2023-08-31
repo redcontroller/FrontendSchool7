@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자수 세기</title>
+    <style>
+        body,
+        textarea,
+        label,
+        div,
+        p,
+        article {
+            margin: 0;
+            padding: 0;
+            font: inherit;
+        }
+
+        body {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            font-family: sans-serif;
+        }
+
+        .container {
+            margin: 60px auto;
+            text-align: center;
+        }
+
+        .label {
+            padding: 0 85px;
+            font-size: 35px;
+            /* border: 1px solid royalblue; */
+        }
+
+        #input {
+            display: block;
+            margin: 20px 0;
+            width: 80vw;
+            font-size: 20px;
+        }
+
+        .result {
+            font-size: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <article class="container">
+        <label class="label" for="input">질문의 답변을 입력해주세요!</label>
+        <textarea id="input" cols="50" rows="30"></textarea>
+        <p class="result">전체 글자 수:</p>
+    </article>
+    <script>
+        const result = document.querySelector('.result');
+
+        window.addEventListener('keyup', (e) => {
+            const txt = document.querySelector('#input');
+            textCount = txt.value.length;
+            // console.log(`글자수 : ${textCount}`);
+            result.textContent = `전체 글자 수: ${textCount}`;
+        });
+
+    </script>
+</body>
+
+</html>
