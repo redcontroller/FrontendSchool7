@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>callback 지옥</title>
+    <style>
+        button {
+            font-family: sans-serif;
+            font-weight: bold;
+            background-color: gold;
+            border: 0;
+            box-shadow: 0 0 3px 0 #000;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>some text</p>
+    <button type="button">통신 시작!</button>
+    <script>
+        const txt = document.querySelector('p');
+        const btn = document.querySelector('button');
+        // btn.addEventListener('click', xhrRequest);
+
+        let result; // const 는 무조건 초기화 해야하나, let 은 초기화가 필수는 아니다.
+
+        function xhrRequest() {
+            const xhrObj = new XMLHttpRequest();
+            xhrObj.open('GET', 'message.txt');
+            xhrObj.onreadystatechange = () => {
+                if (xhrObj.readyState === 4 && xhrObj.status === "200") {
+                    // const result = xhrObj.responseText;
+                    // txt.textContent = result;
+                    result = xhrObj.responseText;
+
+                    console.log(result); // ② 안녕하세요! 반가워요! 무슨일이시죠?
+                }
+            };
+            xhrObj.send();
+        }
+
+        xhrRequest();
+        console.log(result); // ① undefined
+
+    </script>
+</body>
+
+</html>

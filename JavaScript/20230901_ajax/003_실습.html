@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xmlhttprequest</title>
+    <style>
+        button {
+            font-family: sans-serif;
+            font-weight: bold;
+            background-color: gold;
+            border: 0;
+            box-shadow: 0 0 3px 0 #000;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <label for="click">데이터를 가져옵니다!</label>
+    <button id="click" type="button">버튼</button>
+    <script>
+        const xhrObj = new XMLHttpRequest();
+        const btn = document.querySelector('#click');
+
+        btn.addEventListener('click', () => {
+            xhrObj.open('GET', 'message.txt');
+            xhrObj.onreadystatechange = () => {
+                // readystate : 요청을 보내는 클라이언트의 상태를 의미합니다.
+                // readystate의 종류
+                // 0 (UNSENT) - XHR 객체가 생성되었지만 아직 초기화되지 않았습니다.
+                // 1 (OPENED) - open()함수가 호출되어 요청이 초기화되었습니다.
+                // 2 (HEADERS_RECEIVED) - send()함수가 호출되었습니다.
+                // 3 (LOADING) - 데이터를 다운받는 중 입니다.
+                // 4 (DONE) - 통신이 완료되었습니다.
+                // status === "200" 요청 성공
+                if (xhrObj.readyState === 4 && xhrObj.status === "200") {
+                    const result = xhrObj.responseText;
+                    console.log(result);
+                }
+            };
+            xhrObj.send(); // 서버로 요청을 보낸다.
+        })
+
+    </script>
+</body>
+
+</html>
