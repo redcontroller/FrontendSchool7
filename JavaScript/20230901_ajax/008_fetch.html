@@ -11,10 +11,10 @@
 <body>
     <script>
         const result = fetch('https://mdn.github.io/learning-aea/javascript/oojs/json/superheroes.json').then((response) => {
-            if (!response.ok) {
+            if (!response.ok) { // ok : 200 ~ 299
                 throw new Error(`HTTP ERROR!! State: ${response.status}`);
             }
-            return response.json();
+            return response.json(); // json parse()
         }).then((data) => {
             console.log(data);
             return data;

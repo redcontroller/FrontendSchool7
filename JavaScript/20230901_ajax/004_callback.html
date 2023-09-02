@@ -26,25 +26,25 @@
         const btn = document.querySelector('button');
         // btn.addEventListener('click', xhrRequest);
 
-        let result; // const 는 무조건 초기화 해야하나, let 은 초기화가 필수는 아니다.
+        let result; // const 는 무조건 초기화해야 하나, let 은 초기화가 필수는 아니다.
 
         function xhrRequest() {
             const xhrObj = new XMLHttpRequest();
             xhrObj.open('GET', 'message.txt');
             xhrObj.onreadystatechange = () => {
-                if (xhrObj.readyState === 4 && xhrObj.status === "200") {
+                if (xhrObj.readyState === 4 && xhrObj.status === 200) {
                     // const result = xhrObj.responseText;
                     // txt.textContent = result;
                     result = xhrObj.responseText;
 
-                    console.log(result); // ② 안녕하세요! 반가워요! 무슨일이시죠?
+                    console.log(result);
                 }
             };
-            xhrObj.send();
+            xhrObj.send();  // send()를 해야 실행이 됨
         }
 
-        xhrRequest();
-        console.log(result); // ① undefined
+        xhrRequest();  // ② 안녕하세요! 반가워요! 무슨일이시죠?
+        console.log(result); // ① undefined (먼저 실행된다)
 
     </script>
 </body>

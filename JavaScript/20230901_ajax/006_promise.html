@@ -24,7 +24,7 @@
                     }
                 }
             };
-            requestObj.send();
+            requestObj.send(); // send() 를 실행해야 작동한다.
         })
 
         orderCoffee.then((asyncResult) => { // resolved 가 실행되면 then() 메소드가 실행된다.
