@@ -2,8 +2,60 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+// router.get('/', function(req, res, next) {
+//   res.send('respond with a resource');
+// });
+
+const userInfo = {
+  lee: {
+    password: "123123",
+  },
+  kim: {
+    password: "456456",
+  },
+}
+
+router.get("/", (req, res) => { // 로그인 되어 있다면 값이 보내지고, 아니라면 null 반환
+  const session = req.session;
+  res.render("index", {
+    username: session.username,
+  });
+});
+
+router.get('/login/:username/:password', (req,res) => { // username 저장 여부 확인
+  const session = req.session;
+  const { username, password } = req.params;
+  if(!userInfo[username]) {
+    res.status(400).json({
+      message: "user not found",
+    });
+  }
+
+  if (userInfo[username]["password"] === password) { // pw 일치 여부 확인
+    session.username = username;
+    res.status(200).json({
+      message: "user login!!",
+    });
+  } else {
+    res.status(400).json({
+      message: "user pw incorrect!!",
+    });
+  }
+});
+
+router.get('/logout', (req,res) => {
+  const session = req.session;
+  if (session.username) {
+    req.session.destroy((err) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.redirect("/users");
+      }
+    });
+  } else {
+    res.redirect('/users');
+  }
 });
 
 module.exports = router;

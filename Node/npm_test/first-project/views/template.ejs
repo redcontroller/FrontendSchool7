@@ -6,7 +6,13 @@
 </head>
 
 <body>
-    <div>ejs template</div>
+    <!-- <% if(true){ %>
+        <div>ejs working</div>
+    <% } else { %>
+        <div>ejs not working</div>
+    <% } %> -->
+    <% include ./layout/navbar.ejs %>
+        <%= data %>
 </body>
 
 </html>
