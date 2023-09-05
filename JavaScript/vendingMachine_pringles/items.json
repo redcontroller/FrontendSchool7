@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Original Crisps",
+        "cost": 1000,
+        "img": "Pringles-original.png",
+        "count": 5
+    },
+    {
+        "name": "Onion Crisps",
+        "cost": 1000,
+        "img": "Pringles-onion.png",
+        "count": 5
+    },
+    {
+        "name": "BBQ Crisps",
+        "cost": 1000,
+        "img": "Pringles-bbq.png",
+        "count": 5
+    },
+    {
+        "name": "Cheese Crisps",
+        "cost": 1000,
+        "img": "Pringles-cheddar.png",
+        "count": 5
+    },
+    {
+        "name": "Pizza Crisps",
+        "cost": 1000,
+        "img": "Pringles-pizza.png",
+        "count": 5
+    },
+    {
+        "name": "Ranch Crisps",
+        "cost": 1000,
+        "img": "Pringles-ranch.png",
+        "count": 5
+    },
+    {
+        "name": "Ketchup Crisps",
+        "cost": 1000,
+        "img": "Pringles-ketchup.png",
+        "count": 5
+    },
+    {
+        "name": "Adobada Crisps",
+        "cost": 1000,
+        "img": "Pringles-adobada.png",
+        "count": 5
+    },
+    {
+        "name": "Habaneras Crisps",
+        "cost": 1000,
+        "img": "Pringles-habaneras.png",
+        "count": 5
+    },
+    {
+        "name": "Minecraft Crisps",
+        "cost": 1000,
+        "img": "Pringles-minecraft.png",
+        "count": 5
+    }
+]
