@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>document</title>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const Login = ({ infoUser, setLogin }) => {
+            const [id, setId] = React.useState("");
+            const [pw, setPw] = React.useState("");
+
+            const handleLoginInput = (event) => {
+                console.log(event.target.value);
+                setId(event.target.value);
+            };
+
+            const handlePasswordInput = (event) => {
+                console.log(event.target.value);
+                setPw(event.target.value);
+            };
+
+            const handleLoginSubmit = (event) => {
+                event.preventDefault();
+                if (id === "") {
+                    alert("아이디를 입력하지 않았습니다.");
+                } else if (pw === "") {
+                    alert("패스워드를 입력하지 않습니다.");
+                }
+
+                console.log(infoUser);
+                if (id == infoUser.idUser && pw == infoUser.pwUser.toString()) {
+                    setLogin(true);
+                }
+
+                console.log(`id: ${id}, pw: ${pw}`);
+            };
+
+            return (
+                <div>
+                    <form onSubmit={handleLoginSubmit}>
+                        <label>
+                            아이디 :
+                            <input type="text" onChange={handleLoginInput} />
+                        </label>
+                        <br />
+                        <label>
+                            비밀번호 :
+                            <input type="password" onChange={handlePasswordInput} />
+                        </label>
+                        <button type="submit">로그인</button>
+                    </form>
+                </div>
+            );
+        };
+
+        const Homepage = ({ setLogin }) => {
+            const logoutClick = () => {
+                setLogin(false);
+            };
+
+            return (
+                <main>
+                    <h1>홈페이지에 오신것을 환영합니다!</h1>
+                    <button onClick={logoutClick}>로그아웃</button>
+                </main>
+            );
+        };
+
+        const App = () => {
+            const user = {
+                idUser: "jasinis102@gmail.com",
+                pwUser: 1234
+            };
+
+            // 로그인 상태를 판단하는 state
+            const [login, setLogin] = React.useState(false);
+
+            return (
+                login ? <Homepage setLogin={setLogin} /> : <Login infoUser={user} setLogin={setLogin} />
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.querySelector("#root"));
+        root.render(<App />);
+    </script>
+</body>
+
+</html>

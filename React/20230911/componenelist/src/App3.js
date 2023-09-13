@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Login from './Components/Login';
-import HomePage from './Components/HomePage';
+import Homepage from './Components/Homepage';
 
 export default function App3() {
 
@@ -9,12 +9,13 @@ export default function App3() {
     pwUser: 1234
   }
 
-  // 로그인 상태를 판단하느 state
+  // 로그인 상태를 판단하는 state
   const [login, setLogin] = useState(false);
 
     return (
 
-      login ? <HomePage setLogin={setLogin} /> : <Login infoUser={user} setLogin={setLogin}/>
-
+      <>
+        {login ? <Homepage setLogin={setLogin} /> : <Login infoUser={user} setLogin={setLogin}/>}
+      </>
     );
 }
