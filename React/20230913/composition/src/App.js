@@ -1,6 +1,6 @@
 import styled from "styled-components";
-// 변하는 부분과 변하지 않는 부분 설명
 
+// 변하는 부분과 변하지 않는 부분 구분하여 추출하기
 const CardDiv = styled.div`
   padding: 20px;
   border-radius: 10px;
