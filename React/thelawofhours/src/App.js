@@ -1,7 +1,14 @@
+import Header from "./Components/Header";
+import Main from "./Components/Main";
+import Footer from "./Components/Footer";
+import reset from "./reset.css";
+
 function App() {
   return (
     <div>
-      hello world
+      <Header />
+      <Main />
+      <Footer />
     </div>
   );
 }
