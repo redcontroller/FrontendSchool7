@@ -1,0 +1,137 @@
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Pretendard-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    --gradient2: radial-gradient(293.21% 130.49% at 3.59% 5.28%, #F0F4FF 0%, #A5B6EE 100%);
+    --gradient: linear-gradient(144deg, #5572BB 2.13%, #374B7C 102.97%);
+    --light: #A5B6EE;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+div,
+p,
+h1,
+h2,
+h3,
+ul,
+li,
+input,
+button,
+body {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+}
+
+body {
+    color: white;
+    font-family: 'Pretendard-Regular', 'Pretendard-Bold', sans-serif;
+}
+
+ul, li {
+    list-style: none;
+}
+
+/* css 적용 */
+body {
+    width: 100vw;
+    height: 100vh;
+    background: var(--gradient2) no-repeat;
+}
+
+.header h1 {
+    width: 100%;
+    text-align: center;
+    padding-top: 72px;
+}
+
+.header img {
+    width: 30%;
+    max-width: 250px;
+}
+
+.main {
+    width: 400px;
+    height: 360px;
+    margin: 60px auto;
+    box-shadow: 20px 20px 60px 10px rgba(55, 75, 124, 0.40);
+    border-radius: 16px;
+    background: var(--gradient);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.main h2 {
+    font-size: 2.4rem;
+    position: relative;
+}
+
+.main h2::after {
+    content: "dfdf";
+    position: absolute;
+    left: 50%;
+    top: 150%;
+    width: 70%;
+    height: 1px;
+    background-color: #3D538A;
+    box-shadow: 1px 0 1px 0 black;
+}
+
+.main ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main li {
+    color: var(--light);
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.main .colon {
+    color:#8198D0;
+    font-size: 6rem;
+    vertical-align: bottom;
+}
+
+.main input {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    color: white;
+    font-size: 4rem;
+    text-align: center;
+    font-family: 'Pretendard-Bold';
+    background-image: url('./img/box.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    border: none;
+}
+
+.main input::placeholder {
+    color: white;
+}
+
+.footer {
+    color: #8596BF;
+    text-align: center;
+    padding: 60px 0 103px;
+}
