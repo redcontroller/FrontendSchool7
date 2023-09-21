@@ -2,11 +2,11 @@ import { createContext } from "react";
 
 const UserInfo = createContext({ name: "gary", id: "garyIsFree" });
 
-
-
 const App = () => {
     return (
-        <HelloLicat />
+        <UserInfo.Provider value={{name: "Licat", id: "LicatIsNotFree"}}>
+            <HelloLicat />
+        </UserInfo.Provider>
         // <HelloLicat value={{ name: "gary", id: "garyIsFree" }} />
     );
 };
