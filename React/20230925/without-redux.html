@@ -1,23 +1,26 @@
+<!DOCTYPE html>
 <html>
-    <body>
-        <style>
-                    .container {
+
+<body>
+    <style>
+        .container {
             border: 5px solid black;
             padding: 1rem;
-            margin-bottom:1rem;
+            margin-bottom: 1rem;
         }
-        body{
-            margin:1rem;
+
+        body {
+            margin: 1rem;
         }
-        </style>
-        <h1>Without redux</h1>
-        <div id="red"></div>
-        <div id="green"></div>
-        <div id="blue"></div>
-        
-        <script>
-function red(){
-    document.querySelector('#red').innerHTML = `
+    </style>
+    <h1>Without redux</h1>
+    <div id="red"></div>
+    <div id="green"></div>
+    <div id="blue"></div>
+
+    <script>
+        function red() {
+            document.querySelector('#red').innerHTML = `
         <div class="container" id="component_red" style="background-color:yellow">
             <h1>red</h1>
             <input type="button" value="fire" onclick="
@@ -27,10 +30,10 @@ function red(){
             ">
         </div>
     `;
-}
-red();
-function green(){
-    document.querySelector('#green').innerHTML = `
+        }
+        red();
+        function green() {
+            document.querySelector('#green').innerHTML = `
         <div class="container" id="component_green" style="background-color:yellow">
             <h1>green</h1>
             <input type="button" value="fire" onclick="
@@ -40,10 +43,10 @@ function green(){
             ">
         </div>
     `;
-}
-green();
-function blue(){
-    document.querySelector('#blue').innerHTML = `
+        }
+        green();
+        function blue() {
+            document.querySelector('#blue').innerHTML = `
         <div class="container" id="component_blue" style="background-color:yellow">
             <h1>blue</h1>
             <input type="button" value="fire" onclick="
@@ -53,8 +56,9 @@ function blue(){
             ">
         </div>
     `;
-}
-blue();
-        </script>
-    </body>
+        }
+        blue();
+    </script>
+</body>
+
 </html>
