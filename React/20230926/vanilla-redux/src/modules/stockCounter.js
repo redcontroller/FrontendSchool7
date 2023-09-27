@@ -1,3 +1,4 @@
+// action 을 생성하는 함수
 export const sale = () => {
     return { type: "SALE" }
 }

@@ -4,6 +4,7 @@ import App from "./App";
 import {createStore} from 'redux';
 import rootReducer from "./modules";
 import { Provider } from "react-redux";
+import './reset.css';
 
 const store = createStore(rootReducer);
 console.log(store.getState());
