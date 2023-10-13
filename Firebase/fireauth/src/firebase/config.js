@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore, Timestamp } from 'firebase/firestore';
 import {getAuth} from 'firebase/auth';
 
 const firebaseConfig = {
@@ -20,4 +20,6 @@ const appFireStore = getFirestore(app);
 // 인증 초기화
 const appAuth = getAuth();
 
-export { appFireStore, appAuth };
+const timestamp = Timestamp;
+
+export { appFireStore, appAuth, timestamp };
