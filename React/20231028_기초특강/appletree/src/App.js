@@ -1,9 +1,13 @@
 import './App.css';
 import AppleData from './data.json';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, lazy, Suspense } from 'react';
 import Apple from './components/Apple';
 import NewBtn from './components/NewBtn';
-import NewAppleModal from './components/modal/NewAppleModal'
+// import NewAppleModal from './components/modal/NewAppleModal'
+import { v4 as uuidv4 } from 'uuid';
+import Info from './components/Info';
+
+const NewAppleModal = lazy(() => import('./components/modal/NewAppleModal'));
 
 // 초기 json데이터를 이용하여 사과 정보를 가져옵니다.
 function parseData(data) {
@@ -16,6 +20,7 @@ function parseData(data) {
   return apples;
 }
 
+// 사과의 위치를 지정하는 함수
 function positionApples(apples) {
   Object.values(apples).forEach((apple)=> {
     apple.position = {
@@ -49,8 +54,27 @@ function App() {
   }
 
   // 모달 호출함수
-  function showModal() {
-    setIsAddOpen(true);
+  // function showModal() {
+  //   setIsAddOpen(true);
+  // }
+  const showModal = useCallback(() => setIsAddOpen(true), []);
+
+  // 새로운 사과를 만드는 함수
+  function addApple(apples, sweetness) {
+    // 랜덤한 아이디를 생성합니다.
+    const id = uuidv4();
+    return {
+      ...apples,
+      // 객체를 가진 key를 표현하려면 대괄호를 넣어야한다.
+      [id] : {
+        id,
+        sweetness,
+        offset: {
+          x: (Math.random() * 600) + 200,
+          y: (Math.random() * 600) + 100
+        }
+      }
+    }
   }
 
   const AppleList = Object.values(apples).map((apple) => {
@@ -99,11 +123,29 @@ function App() {
 
       }}
     >
+    {/* 사과 컴포넌트 */}
     <ul>
       {AppleList}
     </ul>
+
+    {/* 사과 나무 정보 컴포넌트 */}
+    <Info apples={apples}/>
+
+    {/* 사과 추가 버튼 컴포넌트 */}
       <NewBtn onClick={showModal}/>
-      {isAddOpen && <NewAppleModal isOpen={isAddOpen} />}
+
+      {isAddOpen &&
+      <Suspense>
+        <NewAppleModal
+          isOpen={isAddOpen}
+          onAdd={(appleText) => {
+            const newApples = addApple(apples, appleText);
+            positionApples(newApples);
+            setApples(newApples);
+          }}
+          onClose={() => setIsAddOpen(false)}
+        />
+      </Suspense>}
     </div>
   );
 }
