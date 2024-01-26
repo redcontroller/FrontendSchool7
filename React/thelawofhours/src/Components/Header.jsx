@@ -19,18 +19,18 @@ const move = keyframes`
 `;
 
 const H1 = styled.h1`
+    /* display: block; */
     position: relative;
-    padding: 13rem 0;
+    padding: 9rem 0 5rem 0;
 
     &::after {
         content: "";
         display: inline-block;
         width: 100%;
-        max-width: 20rem;
+        max-width: 15rem;
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: 20%;
+        left: 38%;
         background-image: url(${back});
         background-size: contain;
         background-position: center;
