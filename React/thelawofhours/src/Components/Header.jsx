@@ -6,9 +6,8 @@ import back from '../img/logo-back.png';
 const Container = styled.header`
     width: 100%;
     height: fit-content;
-    text-align: center;
-`;
-
+    /* background-color: greenyellow; */
+    `;
 const move = keyframes`
     0% {
         transform: rotate(0deg);
@@ -16,33 +15,40 @@ const move = keyframes`
     100% {
         transform: rotate(360deg);
     }
-`;
-
-const H1 = styled.h1`
-    /* display: block; */
-    position: relative;
+    `;
+const H1 = styled.h1``;
+const Logo = styled.div`
+    width: 60rem;
+    margin: 0 auto;
     padding: 9rem 0 5rem 0;
+    position: relative;
+    /* box-sizing: border-box; */
+    /* background-color: palegreen; */
 
     &::after {
         content: "";
         display: inline-block;
-        width: 100%;
-        max-width: 15rem;
-        position: absolute;
-        top: 20%;
-        left: 38%;
+        /* width: 100%; */
+        width: 20vw;
+        max-width: 20rem;
         background-image: url(${back});
         background-size: contain;
         background-position: center;
         background-repeat: no-repeat;
         animation: ${move} 15s linear infinite;
         aspect-ratio: 1/1;
+        
+        position: absolute;
+        top: 18%;
+        left: 35%;
+        /* left: 35%; */
+        /* left: calc(50% - 10vw); */
     }
 `;
-
-const Logo = styled.img`
+const ImgLogo = styled.img`
     display: block;
-    width: 50vw;
+    width: 60vw;
+    max-width: 60rem;
     margin: 0 auto;
 `;
 
@@ -57,13 +63,12 @@ const P = styled.p`
 
 export default function Header() {
   return (
-    <>
-        <Container>
-            <H1>
-                <Logo src={logo} alt="1만 시간의 법칙 계산기" />
-            </H1>
-            <P>“연습은 어제의 당신보다 당신을 더 낫게 만든다.”</P>
-        </Container>
-    </>
+    <Container>
+        <H1 className='a11y-hidden'>1만 시간의 법칙 계산기</H1>
+        <Logo>
+            <ImgLogo src={logo} alt="페이지 로고" />
+        </Logo>
+        <P>“연습은 어제의 당신보다 당신을 더 낫게 만든다.”</P>
+    </Container>
   )
 }

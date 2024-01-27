@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import weniv from '../img/위니브.png';
+import weniv from '../img/weniv_logo.png';
 
 const Container = styled.footer`
   width: 100%;
@@ -10,6 +10,7 @@ const Container = styled.footer`
 
 const Img = styled.img`
   width: 15%;
+  max-width: 13rem;
   margin: 1.7rem auto;
 `;
 
