@@ -4,8 +4,6 @@ import weniv from '../img/weniv_logo.png';
 
 const Container = styled.footer`
   width: 100%;
-  position: fixed;
-  bottom: 0;
 `;
 
 const Img = styled.img`

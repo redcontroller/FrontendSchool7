@@ -20,7 +20,7 @@ const H1 = styled.h1``;
 const Logo = styled.div`
     width: 60rem;
     margin: 0 auto;
-    padding: 9rem 0 5rem 0;
+    padding: 5rem 0 5rem 0;
     position: relative;
     /* box-sizing: border-box; */
     /* background-color: palegreen; */
@@ -39,7 +39,7 @@ const Logo = styled.div`
         aspect-ratio: 1/1;
         
         position: absolute;
-        top: 18%;
+        top: 5%;
         left: 35%;
         /* left: 35%; */
         /* left: calc(50% - 10vw); */
@@ -51,14 +51,22 @@ const ImgLogo = styled.img`
     max-width: 60rem;
     margin: 0 auto;
 `;
-
+const Q = styled.q`
+    display: block;
+    width: fit-content;
+    color: #FF7499;
+    font-family: 'OTEnjoystoriesBA';
+    font-size: 2.3rem;
+    font-style: normal;
+    margin: 0 auto 4.4rem;
+`;
 const P = styled.p`
-  width: fit-content;
-  color: #FF7499;
-  font-family: 'OTEnjoystoriesBA';
-  font-size: 2.3rem;
-  font-style: normal;
-  margin: 0 auto 4.4rem;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+`;
+const Strong = styled.strong`
+    font-size: 2.2rem;
 `;
 
 export default function Header() {
@@ -68,7 +76,11 @@ export default function Header() {
         <Logo>
             <ImgLogo src={logo} alt="페이지 로고" />
         </Logo>
-        <P>“연습은 어제의 당신보다 당신을 더 낫게 만든다.”</P>
+        <Q>연습은 어제의 당신보다 당신을 더 낫게 만든다.</Q>
+        <P><Strong>1만 시간의 법칙은</Strong><br/>
+          어떤 분야의 전문가가 되기 위해서는<br/>
+          최소한 1만 시간의 훈련이 필요하다는 법칙이다.
+        </P>
     </Container>
   )
 }
