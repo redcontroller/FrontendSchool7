@@ -121,7 +121,7 @@
         if (e.keyCode === 13) {
           e.preventDefault();
           const id = $(this).attr("key");
-          const inputCommnet = $(this).val();
+          const inputComment = $(this).val();
           $(this).val("");
           $.ajax({
             url: `/posts/comment/${id}`,
@@ -129,7 +129,7 @@
             cache: false,
             dataType: "json",
             data: {
-              comment: inputCommnet,
+              comment: inputComment,
             },
             success: function (data) {
               const comment = data.post.comment;

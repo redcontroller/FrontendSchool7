@@ -16,7 +16,7 @@ const authCtr = {
             username: username,
         });
 
-        const hashedPassword = await bcrypt(password, 10);
+        const hashedPassword = await bcrypt.hash(password, 10);
         user.password = hashedPassword;
         await user.save();
         res.redirect("/");
@@ -29,22 +29,25 @@ const authCtr = {
             return;
         }
 
-        const valid = await bcrypt.compare(password, user,password);
+        const valid = await bcrypt.compare(password, user.password);
         if (!valid) {
             res.status(500).send("password invalid");
         }
 
         const data = user.toJSON();
         delete data.password;
-        const token = jwt.sign({
-            _id: data._id,
-            username: data.username,
-        },
-        secretKey.key,
-        { expiresIn: "7d"}
+        const token = jwt.sign(
+            {
+                _id: data._id,
+                username: data.username,
+            },
+            secretKey.key,
+            { 
+                expiresIn: "7d" // 7일 (실무에서는 10 ~ 30 min)
+            }
         );
         res.cookie("access_token", token, {
-            maxAge: 1000 * 60 * 60 * 24 * 7,
+            maxAge: 1000 * 60 * 60 * 24 * 7, // 7일 milliseconds 단위 (초*초*분*시간*일)
             httpOnly: true,
         });
         res.redirect("/");

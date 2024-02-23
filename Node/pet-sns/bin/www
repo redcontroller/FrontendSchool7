@@ -20,9 +20,10 @@ db.once("open", () => {
 });
 
 mongoose.connect( // connecting string
-  `mongodb+srv://jasinis102:${dbConfig.pw}@${dbConfig.name}.naabgvo.mongodb.net/?retryWrites=true&w=majority`,
-  {useNewUrlParser: true, useUnifiedTopology:true}
-)
+  `mongodb+srv://${dbConfig.id}:${dbConfig.pw}@${dbConfig.name}.naabgvo.mongodb.net/`
+  , { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Successfully connected to mongodb'))
+  .catch(e => console.error(e));
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);

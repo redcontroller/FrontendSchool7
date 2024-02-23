@@ -14,7 +14,7 @@ const jwtMiddleware = async (req, res, next) => {
             _id: decoded._id,
             username: decoded.username,
         };
-        res.locals.isAUthenticated = { username: decoded.username };
+        res.locals.isAuthenticated = { username: decoded.username };
         return next();
     } catch (error) {
         res.status(500).send("jwt error!");

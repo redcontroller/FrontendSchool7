@@ -5,7 +5,7 @@ const postSchema = new Schema({
     title: String,
     content: String,
     image: String,
-    publishedData: String,
+    publishedDate: String,
     likeCount: {
         type: Number,
         default: 0,

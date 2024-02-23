@@ -8,9 +8,9 @@ const upload = multer({
     storage: multerS3({
         s3: s3,
         bucket: "pet-sns-techitproject",
-        acl: "public-read-write",
+        acl: "public-read-write", // 권한
         key: (req, file, cb) => {
-            cb(null, Date.now()+ "." + file.originalname.split(".").pop()); // dog.png = [dog, png] => png
+            cb(null, Date.now() + "." + file.originalname.split(".").pop()); // dog.png = [dog, png] => png
         }
     })
 });

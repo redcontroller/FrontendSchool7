@@ -1,7 +1,7 @@
 const Post = require("../model/post");
 
-const formatDate = (data) => {
-    let d = new Date(data);
+const formatDate = (date) => {
+    let d = new Date(date);
     let month = "" + (d.getMonth() + 1);
     let day = "" + d.getDate();
     let year = d.getFullYear();
@@ -11,14 +11,16 @@ const formatDate = (data) => {
     if (day.length < 2) {
         day = "0" + month;
     }
-    return [year, month, day].json("-");
+    return [year, month, day].join("-");
 };
 
 const postCtr = {
     upload: async (req, res) => {
         const { title, content } = req.body;
-        const image = req.file.location;
-        const publishedData = formatDate(new Date());
+        console.log(req.file);
+        const image = (req.file ? req.file.location : ''); // location OR undefined
+        // console.log(image); // aws 업로드 파일 확인
+        const publishedDate = formatDate(new Date());
         const post = new Post({
             title: title,
             content: content,
@@ -34,7 +36,7 @@ const postCtr = {
             res.status(500).send("upload error!!");
         }
     },
-    list : async (req, res) => {
+    list: async (req, res) => {
         const posts = await Post.find({});
         res.render("index", {postList: posts});
     },
@@ -46,10 +48,10 @@ const postCtr = {
     updateLayout: async (req, res) => {
         const {id}  = req.params;
         const post = await Post.findById(id);
-        res.render("update", {post, post});
+        res.render("update", {post: post});
     },
     update: async(req, res) => {
-        const {id} = req.parmas;
+        const {id} = req.params;
         const {title, content} = req.body;
         try {
             await Post.findByIdAndUpdate(
@@ -74,14 +76,14 @@ const postCtr = {
     like: async (req, res) => {
         const {id} = req.params;
         const post = await Post.findById(id);
-        const check = post.likeUser.some(userId => {
+        const check = post.likeUser.some((userId) => {
             return userId === req.userInfo._id;
         });
         if (check) {
             post.likeCount -= 1;
             const idx = post.likeUser.indexOf(req.userInfo._id);
             if (idx > -1) {
-                post.likeUser.splice(idx,1);
+                post.likeUser.splice(idx, 1);
             }
         } else {
             post.likeCount += 1;
@@ -91,7 +93,7 @@ const postCtr = {
         res.status(200).json({
             check: check,
             post: result,
-        })
+        });
     },
     comment: async (req, res) => {
         const {id} = req.params;
@@ -103,7 +105,7 @@ const postCtr = {
             user: user,
         };
 
-        post .comment.push(commentWrap);
+        post.comment.push(commentWrap);
         const result = await post.save();
         res.status(200).json({post:result});
     },
