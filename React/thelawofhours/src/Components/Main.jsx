@@ -120,9 +120,10 @@ const ImgClick = styled.img`
   top: 20px;
 `;
 const FormContent = styled.div`
-  display: flex;
-  width: 100vw;
   height: 38vh;
+  min-height: 120px;
+  max-height: 300px;
+  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 `;
