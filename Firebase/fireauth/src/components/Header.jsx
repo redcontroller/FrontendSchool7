@@ -8,10 +8,9 @@ export default function Header() {
   const { logout } = useLogout();
   const { user } = useAuthContext();
   const location = useLocation();
-
   return (
     <header className={styles.header}>
-      <div className={styles['header-wrap']}>
+      <div className={'max-width ' + styles['max-width']}>
         <h1>
           <Link to="/">
             <img className={styles.logo} src={logo} alt="두근두근 비밀일기" />
@@ -21,18 +20,14 @@ export default function Header() {
           {/* 유저 정보가 없는 상태 즉, 로그아웃 상태라면 */}
           {!user ? (
             <>
-              {location.pathname !== '/signup' ? (
-                <>
-                  <Link to="/login" className={styles['btn-login']}>
-                    로그인
-                  </Link>
-                  <Link to="/signup" className={styles['btn-join']}>
-                    회원가입
-                  </Link>
-                </>
-              ) : (
+              {location.pathname !== '/login' && (
                 <Link to="/login" className={styles['btn-login']}>
                   로그인
+                </Link>
+              )}
+              {location.pathname !== '/signup' && (
+                <Link to="/signup" className={styles['btn-join']}>
+                  회원가입
                 </Link>
               )}
             </>

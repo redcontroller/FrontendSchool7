@@ -3,26 +3,21 @@
   background-color: white;
 }
 
-.header-wrap {
-  width: 1224px;
-  max-width: calc(100%-60px);
+.header .max-width {
   height: 120px;
-  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background-color: darkorange; */
-}
-
-.logo {
-  height: 75px;
 }
 
 .header h1 {
   width: 156px;
 }
 
-/* index.html */
+.logo {
+  height: 75px;
+}
+
 .header .login-text {
   display: flex;
   align-items: center;
@@ -70,11 +65,14 @@
 /* .btn-join,
   .btn-login,
   .btn-logout */
-[class^='btn'] {
-  display: inline-block;
+[class^='Header_btn'] {
+  color: #5a6a72;
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
   padding: 1em 1em 1em 2.8em;
   text-decoration: none;
-  color: #5a6a72;
+  background-color: black;
 }
 
 .btn-join {
